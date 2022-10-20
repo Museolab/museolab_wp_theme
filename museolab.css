@@ -1,0 +1,129 @@
+/*  CSS lié a la page content-excerpt.php  */
+
+.archive-container {
+    display:inline-flex;
+        flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.m-thumb-container {
+
+    width: 480px;
+    height: 270px;
+    flex: none;
+    margin: 10px;
+    background-position: center;
+    background-color: black;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 3px #000;
+    box-shadow: 0 0 3px #000;
+    overflow: hidden;
+
+
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    background: rgba(77, 77, 77, .9);
+    color: #fef5df;
+    opacity: 1;
+    background: linear-gradient(rgba(77, 77, 77, .0), rgba(77, 77, 77, .9), rgba(77, 77, 77, .9));
+    transform: translateY(190px);
+    transition: all 0.5s;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.items {
+    padding-left: 20px;
+    padding-top: 20px;
+    letter-spacing: 3px;
+}
+
+
+.head {
+    font-size: 30px;
+    line-height: 10px;
+    transform: translateY(0px);
+    transition: all 0.7s;
+}
+
+.head hr {
+    display: block;
+    width: 0;
+    border: none;
+    border-bottom: solid 2px #fef5df;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    transition: all 0.5s;
+}
+
+.price {
+    font-size: 22px;
+    line-height: 20px;
+    font-weight: lighter;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s;
+}
+
+.cart {
+    font-size: 12px;
+    opacity: 0;
+    letter-spacing: 1px;
+    font-family: 'Lato', sans-serif;
+    transform: translateY(40px);
+    transition: all 0.7s;
+}
+
+.cart i {
+    font-size: 16px;
+}
+
+.cart span {
+    margin-left: 10px;
+}
+
+.m-thumb-container:hover .overlay {
+    transform: translateY(0px);
+
+    opacity: 1;
+    background: rgba(77, 77, 77, .9);
+}
+
+.m-thumb-container:hover .overlay .head {
+    transform: translateY(0px);
+}
+
+.m-thumb-container:hover .overlay hr {
+    width: 75px;
+    transition-delay: 0.4s;
+}
+
+.m-thumb-container:hover .overlay .price {
+    transform: translateY(0px);
+    transition-delay: 0.3s;
+    opacity: 1;
+}
+
+.m-thumb-container:hover .overlay .cart {
+    transform: translateY(0px);
+    transition-delay: 0.6s;
+    opacity: 1;
+}
+
+
+
+
+
+
+.custom-logo {
+    vertical-align: top;
+
+}

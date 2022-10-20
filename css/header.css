@@ -1,0 +1,66 @@
+
+header{
+    font-family: var(--global--font-primary);
+    font-weight: 300;
+    font-variant: small-caps;
+}
+
+.page-header {
+    background: var(--main-header-color);
+    position: sticky;
+    z-index: 1;
+/*
+    height: 70px;
+*/
+}
+
+
+.page-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.page-header ul {
+    display: flex;
+    order: 1;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.page-header h2 {
+    border-right: solid;
+    height: 70px;
+    padding: 15px;
+    vertical-align: middle;
+
+}
+
+.page-header li {
+height: 70px;
+    padding: 15px;
+
+border-right: solid;    
+
+}
+
+.page-header li:hover{
+
+background-color: grey;
+}
+
+
+
+
+
+@media screen and (min-width: 550px) {
+    .page-header ul {
+        width: auto;
+        margin-top: 0;
+    }
+
+    .page-header .cta-contact {
+        order: 1;
+    }
+}

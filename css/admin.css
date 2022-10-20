@@ -1,0 +1,8 @@
+/*Cache des éléments des pages d'éditions d'articles*/
+#slugdiv{
+    display: none;
+}
+
+.hidden-acf{
+    display: none;
+}

@@ -1,0 +1,2727 @@
+[
+    {
+        "key": "group_60880e5d7eacb",
+        "title": "Achats et Factures",
+        "fields": [
+            {
+                "key": "field_60880e6bcbce2",
+                "label": "Associé",
+                "name": "associe",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_60881a5bcbce3",
+                "label": "Piece comptable",
+                "name": "piece_comptable",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator"
+                ],
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_60881a78cbce4",
+                        "label": "fichier",
+                        "name": "fichier",
+                        "type": "file",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "library": "uploadedTo",
+                        "min_size": "",
+                        "max_size": "",
+                        "mime_types": "pdf,jpg,png"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "achat"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6076a80658bf2",
+        "title": "Appel à Projet",
+        "fields": [
+            {
+                "key": "field_6076a8130a9d4",
+                "label": "Coordonnees",
+                "name": "coordonnees",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_6076a8510a9d5",
+                        "label": "Nom",
+                        "name": "nom",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_6076a8570a9d6",
+                        "label": "Prenom",
+                        "name": "prenom",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_6076a85d0a9d7",
+                        "label": "Adresse mail",
+                        "name": "adresse_mail",
+                        "type": "email",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_6076a87f0a9d8",
+                        "label": "Structure",
+                        "name": "structure",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_6076a88b0a9d9",
+                        "label": "Site web",
+                        "name": "site_web",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "http:\/\/www.monsite.fr"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "151"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_6051e3bf71e11",
+        "title": "Articles liés",
+        "fields": [
+            {
+                "key": "field_6051e3d4ea400",
+                "label": "Articles liés",
+                "name": "articles_lies",
+                "type": "relationship",
+                "instructions": "Les articles en liens avec l'équipement - Ajout automatique à cette liste lorsque qu'un article est déclaré lié à cet équipement",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "elements": "",
+                "min": "",
+                "max": "",
+                "return_format": "id"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_62f6369e062f1",
+        "title": "content_category",
+        "fields": [
+            {
+                "key": "field_62f636b0b3e94",
+                "label": "Type de contenu",
+                "name": "content_category",
+                "type": "checkbox",
+                "instructions": "De quel type de contenu s'agit-il ?",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "article": "Article",
+                    "veille": "Veille",
+                    "galery": "Galerie d'image",
+                    "tuto": "Tutoriel",
+                    "technical": "Fiche technique"
+                },
+                "allow_custom": 0,
+                "default_value": [
+                    "article"
+                ],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "comments",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": false,
+        "description": ""
+    },
+    {
+        "key": "group_62f255a7c2dc1",
+        "title": "content_content",
+        "fields": [
+            {
+                "key": "field_62f255ba940b0",
+                "label": "Liens vers contenu",
+                "name": "content_content",
+                "type": "page_link",
+                "instructions": "Fait un lien vers un contenu existant",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 1,
+                "multiple": 0
+            },
+            {
+                "key": "field_62f255a7d2e50",
+                "label": "Style",
+                "name": "style",
+                "type": "select",
+                "instructions": "Choix du style",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "default": "Aucun style disponible"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_62f25647940b1",
+                "label": "Miniature",
+                "name": "miniature",
+                "type": "true_false",
+                "instructions": "Afficher la version réduite au chargement ?",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_category",
+                    "operator": "==",
+                    "value": "category:toto"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Element Contenu du groupe \"Content\""
+    },
+    {
+        "key": "group_60dc65c6b3022",
+        "title": "content_galery",
+        "fields": [
+            {
+                "key": "field_60dc65f49d8ee",
+                "label": "Galerie",
+                "name": "galerie",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "insert": "append",
+                "library": "all",
+                "min": "",
+                "max": "",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_60dc66ce9d8ef",
+                "label": "Galery style",
+                "name": "galery_style",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Carrousel": "Carrousel",
+                    "Grille": "Grille",
+                    "Pleine largeur": "Pleine largeur"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_60dd8c10a3eaf",
+                "label": "Options",
+                "name": "options",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "linked": "Ajouter automatiquement les images aux galeries des projets et machines liées",
+                    "option_2": "Option 2"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "horizontal",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Element galery du groupe \"Content\""
+    },
+    {
+        "key": "group_60dd905f57676",
+        "title": "content_picture",
+        "fields": [
+            {
+                "key": "field_60dd905f6399d",
+                "label": "Image",
+                "name": "picture",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_60dd905f675fe",
+                "label": "Image style",
+                "name": "picture_style",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "image_medium": "Adaptée au cadre",
+                    "image_miniature": "Miniature",
+                    "image_banner": "Bandeau pleine largeur"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_60dd905f6b2bc",
+                "label": "Options",
+                "name": "options",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "linked": "Ajouter automatiquement l'image aux galeries des projets et machines liées",
+                    "option_2": "Option 2"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "horizontal",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Contents => Image seule"
+    },
+    {
+        "key": "group_60db0d8f347b2",
+        "title": "content_text",
+        "fields": [
+            {
+                "key": "field_60db0d98e1175",
+                "label": "Editeur de texte",
+                "name": "text",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_60db0e07e1176",
+                "label": "Style",
+                "name": "style",
+                "type": "select",
+                "instructions": "Choix du style",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "default": "Aucun style disponible"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_category",
+                    "operator": "==",
+                    "value": "category:toto"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Element texte du groupe \"Content\""
+    },
+    {
+        "key": "group_60dc68e4273f8",
+        "title": "contents_all",
+        "fields": [
+            {
+                "key": "field_60dc690456797",
+                "label": "Contenus",
+                "name": "contents",
+                "type": "flexible_content",
+                "instructions": "Les différents contenus de votre article, ajoutez et agencez les comme vous souhaitez, certains éléments sont utilisables qu'une seule fois.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "layouts": {
+                    "layout_60dc696c46a79": {
+                        "key": "layout_60dc696c46a79",
+                        "name": "texte",
+                        "label": "Texte",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_60dc69d456798",
+                                "label": "Texte",
+                                "name": "bloc_texte",
+                                "type": "clone",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "clone": [
+                                    "group_60db0d8f347b2"
+                                ],
+                                "display": "seamless",
+                                "layout": "block",
+                                "prefix_label": 0,
+                                "prefix_name": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_62f256ed5fb22": {
+                        "key": "layout_62f256ed5fb22",
+                        "name": "contenu_lie",
+                        "label": "Contenu lié",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_62f257045fb23",
+                                "label": "Contenu",
+                                "name": "contenu_contenu",
+                                "type": "clone",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "user_roles": [
+                                    "all"
+                                ],
+                                "clone": [
+                                    "group_62f255a7c2dc1"
+                                ],
+                                "display": "seamless",
+                                "layout": "block",
+                                "prefix_label": 0,
+                                "prefix_name": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_60dc6a1256799": {
+                        "key": "layout_60dc6a1256799",
+                        "name": "galerie",
+                        "label": "Galerie",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_60dc6a255679a",
+                                "label": "Galerie",
+                                "name": "galerie",
+                                "type": "clone",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "clone": [
+                                    "group_60dc65c6b3022"
+                                ],
+                                "display": "seamless",
+                                "layout": "block",
+                                "prefix_label": 0,
+                                "prefix_name": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_60dd91a1d48dc": {
+                        "key": "layout_60dd91a1d48dc",
+                        "name": "picture",
+                        "label": "Image",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_60dd91a1d48dd",
+                                "label": "Image",
+                                "name": "picture",
+                                "type": "clone",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "clone": [
+                                    "group_60dd905f57676"
+                                ],
+                                "display": "seamless",
+                                "layout": "block",
+                                "prefix_label": 0,
+                                "prefix_name": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    }
+                },
+                "button_label": "Ajouter un élément",
+                "min": "",
+                "max": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Les différents contenus affichables en articles"
+    },
+    {
+        "key": "group_61d4210c893cd",
+        "title": "debug tool",
+        "fields": [
+            {
+                "key": "field_61d42119ad437",
+                "label": "boolea",
+                "name": "boolea",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "abc",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_61ddbc2698e8e",
+                "label": "test02",
+                "name": "test02",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "projets"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "sert a vérifier certaines variable lors des tests"
+    },
+    {
+        "key": "group_6010117e100a7",
+        "title": "Définition des ressources",
+        "fields": [
+            {
+                "key": "field_6010119144056",
+                "label": "Type de ressource",
+                "name": "type_de_ressource",
+                "type": "taxonomy",
+                "instructions": "De quel type est cette ressource",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "ressource_type",
+                "field_type": "checkbox",
+                "add_term": 0,
+                "save_terms": 1,
+                "load_terms": 0,
+                "return_format": "id",
+                "multiple": 0,
+                "allow_null": 0
+            },
+            {
+                "key": "field_601011ce44057",
+                "label": "Description brève",
+                "name": "description_breve",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_6010124bc71d0",
+                "label": "Equipement lié",
+                "name": "equipement_lie",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "clone": [
+                    "group_5ff8682fbe00b"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_60118234a7f04",
+                "label": "Visibilité",
+                "name": "visibilite",
+                "type": "taxonomy",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "visibility",
+                "field_type": "select",
+                "allow_null": 0,
+                "add_term": 1,
+                "save_terms": 1,
+                "load_terms": 0,
+                "return_format": "id",
+                "multiple": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "ressource"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": ""
+    },
+    {
+        "key": "group_5ff4361b05cd1",
+        "title": "Désignation équipement",
+        "fields": [
+            {
+                "key": "field_5ff43a50d4d50",
+                "label": "Type d'équipement",
+                "name": "equipement_taxo",
+                "type": "taxonomy",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "machinetype",
+                "field_type": "select",
+                "allow_null": 0,
+                "add_term": 1,
+                "save_terms": 1,
+                "load_terms": 0,
+                "return_format": "id",
+                "acfe_bidirectional": {
+                    "acfe_bidirectional_enabled": "0"
+                },
+                "multiple": 0
+            },
+            {
+                "key": "field_5ffc611d2ab0c",
+                "label": "Visibilitée",
+                "name": "visibilitee",
+                "type": "taxonomy",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "visibility",
+                "field_type": "select",
+                "allow_null": 0,
+                "add_term": 0,
+                "save_terms": 1,
+                "load_terms": 0,
+                "return_format": "id",
+                "acfe_bidirectional": {
+                    "acfe_bidirectional_enabled": "0"
+                },
+                "multiple": 0
+            },
+            {
+                "key": "field_5ffd615516187",
+                "label": "Description",
+                "name": "description",
+                "type": "textarea",
+                "instructions": "Description en quelques mots de l'équipement.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": "",
+                "acfe_textarea_code": 0
+            },
+            {
+                "key": "field_5ff43691d4d4e",
+                "label": "Marque",
+                "name": "marque",
+                "type": "taxonomy",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "marque",
+                "field_type": "select",
+                "allow_null": 1,
+                "add_term": 1,
+                "save_terms": 1,
+                "load_terms": 0,
+                "return_format": "id",
+                "acfe_bidirectional": {
+                    "acfe_bidirectional_enabled": "0"
+                },
+                "multiple": 0
+            },
+            {
+                "key": "field_5ff43a2dd4d4f",
+                "label": "Modèle",
+                "name": "modele",
+                "type": "text",
+                "instructions": "Modèle de la machine",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_605091614bf3e",
+                "label": "Financeur",
+                "name": "financeur",
+                "type": "select",
+                "instructions": "Qui a financé l'équipement \/ Logo partenaire",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "non-defini": "Non défini",
+                    "mauve": "MAUVE Europe",
+                    "artois": "Université d'Artois",
+                    "orange-fondation": "Orange Solidaire"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_61f8ef3577307",
+                "label": "Date d'aquisition",
+                "name": "aquisition",
+                "type": "date_picker",
+                "instructions": "La date d’acquisition de l'équipement",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator",
+                    "editor"
+                ],
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "left",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_5ff8682fbe00b",
+        "title": "Équipement lié",
+        "fields": [
+            {
+                "key": "field_5ff86867eb8e6",
+                "label": "Equipement lié",
+                "name": "equipement_lie",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "equipements"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "elements": "",
+                "min": "",
+                "max": "",
+                "return_format": "object"
+            },
+            {
+                "key": "field_6010121d6a330",
+                "label": "Type de machine",
+                "name": "type_de_machine",
+                "type": "taxonomy",
+                "instructions": "Type d'équipement lié",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "machinetype",
+                "field_type": "checkbox",
+                "add_term": 1,
+                "save_terms": 0,
+                "load_terms": 0,
+                "return_format": "id",
+                "multiple": 0,
+                "allow_null": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "projets"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "left",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": ""
+    },
+    {
+        "key": "group_5ff4455772107",
+        "title": "Fiche d'inventaire",
+        "fields": [
+            {
+                "key": "field_5ff446927e1f8",
+                "label": "Inventaire",
+                "name": "inventaire",
+                "type": "repeater",
+                "instructions": "Enregistrement inventaire",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "acfe_repeater_stylised_button": 0,
+                "collapsed": "field_5ff449277e1fa",
+                "min": 1,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Inventorier une autre copie de l'équipement",
+                "sub_fields": [
+                    {
+                        "key": "field_5ff449277e1fa",
+                        "label": "Emplacement",
+                        "name": "emplacement",
+                        "type": "taxonomy",
+                        "instructions": "Emplacement de l'équipement",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "taxonomy": "emplacement",
+                        "field_type": "select",
+                        "allow_null": 0,
+                        "add_term": 1,
+                        "save_terms": 1,
+                        "load_terms": 0,
+                        "return_format": "id",
+                        "acfe_bidirectional": {
+                            "acfe_bidirectional_enabled": "0"
+                        },
+                        "multiple": 0
+                    },
+                    {
+                        "key": "field_5ff447ae7e1f9",
+                        "label": "Equipement inventoriable ?",
+                        "name": "inventoriable",
+                        "type": "true_false",
+                        "instructions": "Es-ce que cet équipement peut être enregistrer en inventaire",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 0,
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": ""
+                    },
+                    {
+                        "key": "field_5ff4456a7e1f6",
+                        "label": "Inventaire Artois",
+                        "name": "inventaire_artois",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 0,
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": ""
+                    },
+                    {
+                        "key": "field_5ff445d87e1f7",
+                        "label": "Numéro Artois",
+                        "name": "numero_artois",
+                        "type": "number",
+                        "instructions": "Numéro Artois si enregistré",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_5ff4456a7e1f6",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "min": "",
+                        "max": "",
+                        "step": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "left",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "acfe_display_title": "",
+        "acfe_autosync": "",
+        "acfe_form": 0,
+        "acfe_meta": "",
+        "acfe_note": ""
+    },
+    {
+        "key": "group_603fb0259a1ae",
+        "title": "Liens",
+        "fields": [
+            {
+                "key": "field_60d5edbf80b73",
+                "label": "Elements liés",
+                "name": "elements_linked",
+                "type": "checkbox",
+                "instructions": "Sélectionnez les éléments associés à cette publication - Certains éléments ont pu avoir été insérés de façon automatique.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "machines_linked": "Machines et équipements",
+                    "projets_linked": "Projets",
+                    "articles_linked": "Articles"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "horizontal",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_603fb0a50d392",
+                "label": "Les machines",
+                "name": "les_machines",
+                "type": "post_object",
+                "instructions": "Les équipements en lien avec la publication - Plusieurs choix possibles",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_60d5edbf80b73",
+                            "operator": "==",
+                            "value": "machines_linked"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "equipements"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_61dc0422cdcd0",
+                "label": "Les machines (copie)",
+                "name": "les_machines_copie",
+                "type": "post_object",
+                "instructions": "Crée et stock une copie de la valeurs.\r\nPermet de détecter et mettre à jour les éléments supprimés.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "hidden-acf",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "equipements"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_60d5ed0975d83",
+                "label": "Les projets",
+                "name": "les_projets",
+                "type": "post_object",
+                "instructions": "Les projets en lien avec la publication - Plusieurs choix possibles",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_60d5edbf80b73",
+                            "operator": "==",
+                            "value": "projets_linked"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "projets"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_61dc044bcdcd1",
+                "label": "Les projets (copie)",
+                "name": "les_projets_copie",
+                "type": "post_object",
+                "instructions": "Crée et stock une copie de la valeurs.\r\nPermet de détecter et mettre à jour les éléments supprimés.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "hidden-acf",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "projets"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_60d5ee6fd6095",
+                "label": "Les articles",
+                "name": "les_articles",
+                "type": "post_object",
+                "instructions": "Les articles en lien avec la publication - Plusieurs choix possibles",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_60d5edbf80b73",
+                            "operator": "==",
+                            "value": "articles_linked"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_61dc0450cdcd2",
+                "label": "Les articles (copie)",
+                "name": "les_articles_copie",
+                "type": "post_object",
+                "instructions": "Crée et stock une copie de la valeurs.\r\nPermet de détecter et mettre à jour les éléments supprimés.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "hidden-acf",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Cette page est-elle liée à une machine ou un équipement inventorié ?"
+    },
+    {
+        "key": "group_603cdc64c22f5",
+        "title": "Liens associés",
+        "fields": [
+            {
+                "key": "field_603cdc6a9299e",
+                "label": "Les liens",
+                "name": "liens",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "field_603cdc799299f",
+                "min": 1,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Ajouter un lien",
+                "sub_fields": [
+                    {
+                        "key": "field_603cdc799299f",
+                        "label": "Lien",
+                        "name": "lien",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "http:\/\/monlien"
+                    },
+                    {
+                        "key": "field_6081291ba9e72",
+                        "label": "Options de lien",
+                        "name": "booleans",
+                        "type": "checkbox",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "Afficher texte custom": "Afficher texte custom",
+                            "Ajouter un descriptif": "Ajouter un descriptif",
+                            "Associer une vignette": "Associer une vignette"
+                        },
+                        "allow_custom": 0,
+                        "default_value": [],
+                        "layout": "horizontal",
+                        "toggle": 0,
+                        "return_format": "value",
+                        "save_custom": 0
+                    },
+                    {
+                        "key": "field_603cef4c81d80",
+                        "label": "Titre Url",
+                        "name": "url_title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6081291ba9e72",
+                                    "operator": "==",
+                                    "value": "Afficher texte custom"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_603cdc98929a0",
+                        "label": "Descriptif",
+                        "name": "descriptif",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6081291ba9e72",
+                                    "operator": "==",
+                                    "value": "Ajouter un descriptif"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": 3,
+                        "new_lines": "br"
+                    },
+                    {
+                        "key": "field_605078f6c136c",
+                        "label": "Image aperçu",
+                        "name": "image_apercu",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6081291ba9e72",
+                                    "operator": "==",
+                                    "value": "Associer une vignette"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "medium",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_607d853d85ca9",
+                "label": "Descriptif des liens",
+                "name": "descriptif_liens",
+                "type": "true_false",
+                "instructions": "Ajouter un bloc de description avec les liens",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_607d897e85caa",
+                "label": "Bloc description lien",
+                "name": "bloc_description_lien",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_607d853d85ca9",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_607d89a985cab",
+                        "label": "Titre du bloc",
+                        "name": "nom_du_bloc",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_607d89c285cac",
+                        "label": "Texte introductif",
+                        "name": "introduction_des_liens",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/related-links"
+                }
+            ],
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-banque-de-liens"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "BLOCK : pour intégrer des liens dans un post (projet\/machines\/articles...) Ajoute Tag \"Liens\""
+    },
+    {
+        "key": "group_603d070f6d777",
+        "title": "Machines liées",
+        "fields": [
+            {
+                "key": "field_603d0718bf6a6",
+                "label": "Titre",
+                "name": "titre",
+                "type": "text",
+                "instructions": "Titre du bloc",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Machines liées",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_603d072fbf6a7",
+                "label": "Les machines et équipements liées",
+                "name": "machines_equipements_liees",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "field_603d0756bf6a8",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_603d0756bf6a8",
+                        "label": "Machine ou equipement",
+                        "name": "machines",
+                        "type": "post_object",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "post_type": [
+                            "equipements"
+                        ],
+                        "taxonomy": "",
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "return_format": "id",
+                        "ui": 1
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/machine-widget"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_60db05465dbcd",
+        "title": "Post Content",
+        "fields": [
+            {
+                "key": "field_60db057da393c",
+                "label": "Résumé court",
+                "name": "post_excerpt",
+                "type": "textarea",
+                "instructions": "Décrire le contenu en quelques mots",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": 3,
+                "new_lines": ""
+            },
+            {
+                "key": "field_60db05a6a393d",
+                "label": "Content",
+                "name": "content",
+                "type": "clone",
+                "instructions": "Ajoutez ici les différents éléments que vous souhaitez insérer à votre article.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_60dc68e4273f8"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_60dc30459a5b9",
+                "label": "Liens",
+                "name": "liens",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "clone": [
+                    "group_603fb0259a1ae"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_62fb65cbcd6d1",
+                "label": "Type de contenu",
+                "name": "type_de_contenu",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_62f6369e062f1"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_60802e2e58a4b",
+        "title": "Pour ou Contre",
+        "fields": [
+            {
+                "key": "field_60802fdf7ef8c",
+                "label": "Points pour",
+                "name": "points_pour",
+                "type": "repeater",
+                "instructions": "Les points pour",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "field_608030137ef8d",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_608030137ef8d",
+                        "label": "Element pour",
+                        "name": "element_pour",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_608030367ef8e",
+                        "label": "Complement Pour",
+                        "name": "complement_pour",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": 3,
+                        "new_lines": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_608030527ef8f",
+                "label": "Points contre",
+                "name": "points_contre",
+                "type": "repeater",
+                "instructions": "Les points contre",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "field_608030527ef90",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_608030527ef90",
+                        "label": "Element contre",
+                        "name": "element_contre",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_608030527ef91",
+                        "label": "Complement contre",
+                        "name": "complement_contre",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": 3,
+                        "new_lines": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_608030b17ef92",
+                "label": "Conclusion",
+                "name": "conclusion",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/pour-contre"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_62fb68177716c",
+        "title": "Project Content",
+        "fields": [
+            {
+                "key": "field_62fb681784272",
+                "label": "Résumé court",
+                "name": "post_excerpt",
+                "type": "textarea",
+                "instructions": "Décrire le contenu en quelques mots",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": 3,
+                "new_lines": ""
+            },
+            {
+                "key": "field_62fb681787f0e",
+                "label": "Content",
+                "name": "content",
+                "type": "clone",
+                "instructions": "Ajoutez ici les différents éléments que vous souhaitez insérer à votre article.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_60dc68e4273f8"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_62fb68178bbd2",
+                "label": "Liens",
+                "name": "liens",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "clone": [
+                    "group_603fb0259a1ae"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "projets"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "page_attributes",
+            "featured_image",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_605377bb34c52",
+        "title": "Ressource",
+        "fields": [
+            {
+                "key": "field_605377c80a53f",
+                "label": "Titre de la ressource",
+                "name": "ressource_title",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_60537a2f0a541",
+                "label": "Type de ressource",
+                "name": "type_de_ressource",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "photos": "Galeries photos",
+                    "bill-of-materials": "Nomenclature \/ Bill of Materials",
+                    "files": "Fichiers",
+                    "article": "Article"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_605377f50a540",
+                "label": "Résumé",
+                "name": "ressource_resume",
+                "type": "textarea",
+                "instructions": "Texte court présentant la ressource",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_6054b7500528c",
+                "label": "Lien equipement",
+                "name": "lien_machine",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "clone": [
+                    "group_603fb0259a1ae"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_6053802ccb797",
+                "label": "Groupe galerie",
+                "name": "groupe_galerie",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_60537a2f0a541",
+                            "operator": "==",
+                            "value": "photos"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_60538059cb798",
+                        "label": "Galerie photo",
+                        "name": "galerie_photo",
+                        "type": "gallery",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "medium",
+                        "insert": "append",
+                        "library": "all",
+                        "min": "",
+                        "max": "",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_605489530ac4d",
+                "label": "Groupe fichier",
+                "name": "groupe_fichier",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_60537a2f0a541",
+                            "operator": "==",
+                            "value": "files"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_605489760ac4e",
+                        "label": "Fichier",
+                        "name": "fichier",
+                        "type": "file",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "library": "all",
+                        "min_size": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_605489890ac4f",
+                        "label": "Instruction",
+                        "name": "instruction",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_60daee84e918d",
+                "label": "Contenu",
+                "name": "contenu",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_60537a2f0a541",
+                            "operator": "==",
+                            "value": "article"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "clone": [
+                    "group_60db05465dbcd"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "ressource"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_62fb636f81f8b",
+        "title": "Visibilité du Post",
+        "fields": [
+            {
+                "key": "field_62fb637ae823d",
+                "label": "Visibilité",
+                "name": "visibilite",
+                "type": "radio",
+                "instructions": "La visibilité du post",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "public": "Publique",
+                    "important": "Publique - Mis en avant (A faire)",
+                    "hidden": "Caché - Page publique non référencée (A faire)",
+                    "private": "Privé - Administrateurs uniquement",
+                    "password": "Accessible avec un mot de passe"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "default_value": "",
+                "layout": "vertical",
+                "return_format": "value",
+                "save_other_choice": 0
+            },
+            {
+                "key": "field_62fb647be823e",
+                "label": "Mot de passe",
+                "name": "mot_de_passe",
+                "type": "password",
+                "instructions": "Protection par mot de passe",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_62fb637ae823d",
+                            "operator": "==",
+                            "value": "password"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": ""
+    }
+]

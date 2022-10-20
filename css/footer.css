@@ -1,0 +1,47 @@
+
+.page-footer {
+    background: var(--main-footer-color);
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+}
+
+.page-footer ul {
+    display: flex;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.page-footer li {
+
+    margin: 10px;
+}
+
+
+.new-paysage-footer {
+    position: absolute;
+    transform: translate(0%, -100%);
+/*
+    margin: -20px;
+*/
+    width: 100%;
+    height: 100%;
+
+    /*    border:solid;
+    border-color: aqua;*/
+
+    max-width: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    
+    pointer-events: none;
+}
+
+.paysage-svg2 {
+    max-width: 1000px;
+    position: absolute;
+    bottom: 0;
+}
+

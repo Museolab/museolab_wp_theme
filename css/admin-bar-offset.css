@@ -1,0 +1,12 @@
+.landing-header {
+    position: sticky;
+    top: 32px;
+
+}
+
+@media screen and (max-width: 782px) {
+    .landing-header {
+        top: 46px;
+        /* if it already has a top value, add 46px to it */
+    }
+}
