@@ -24,7 +24,8 @@ while ( have_posts() ) :
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<!-- Ligne 28 commentée pour tester le git pull -->
+<!-- <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> -->
 
 
 
