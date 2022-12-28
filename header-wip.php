@@ -27,7 +27,7 @@
 
 add_action( 'wp_enqueue_scripts', 'my_stylesheet_custom' );
         function my_stylesheet_custom() {
-            wp_enqueue_style( 'test-page-css', get_stylesheet_directory_uri() . '/css/test-page.css' );
+            wp_enqueue_style( 'test-page-css', get_stylesheet_directory_uri() . '/css/home-page.css' );
 
         }; 
 

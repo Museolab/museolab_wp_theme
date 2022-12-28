@@ -1,7 +1,6 @@
 <!-- DEBUT related-equipments-bis.php -->
 
 
-
 <?php
     $post = get_post();
 
@@ -34,7 +33,7 @@
 
 <div class="content-single-container related-elements">
 
-    <h2> Elements Liés </h2>
+    <h3> Elements Liés </h3>
 
     <div class="related-element-container">
 
@@ -42,14 +41,23 @@
 
 
     if( $machine_link ): 
+
+        if (!is_array($machine_link)){
+            $machine_link=[$machine_link];
+        }
         $machine_list ="<ul>";
         ?>
 
         <div class="related-element-cat">
 
-            <?php foreach( $machine_link as $post ): 
-                
+            <?php 
+
+
+            foreach( $machine_link as $post ): 
+
                 $machine_number = $machine_number+1;
+
+                
 
             // Setup this post for WP functions (variable must be named $post).
             setup_postdata($post);  
@@ -63,7 +71,7 @@
             <?php endforeach;
             ?>
 
-            <h3>Machines liés (<?php echo $machine_number;?>)</h3>
+            <h4>Machines liés (<?php echo $machine_number;?>)</h4>
             <?php
             
             echo $machine_list.'</ul>';
@@ -81,6 +89,10 @@
 
 
     if( $post_link ): 
+
+        if (!is_array($post_link)){
+            $post_link=[$post_link];
+        };
         
         if( $machine_number>0 ):
                 echo("<div class='related-element-cat left-border'>");
@@ -109,7 +121,7 @@
 
         <?php endforeach; ?>
 
-        <h3>Posts liés (<?php echo $post_number;?>)</h3>
+        <h4>Posts liés (<?php echo $post_number;?>)</h4>
         <?php
             
             echo $post_list.'</ul>';
@@ -128,43 +140,45 @@
 
     if( $project_link ):
 
+        if (!is_array($project_link)){
+            $project_link=[$project_link];
+        };
+        if( $machine_number+$post_number>0 ):
+        echo("<div class='related-element-cat left-border'>");
+            else :
+            echo("<div class='related-element-cat'>");
 
-    if( $machine_number+$post_number>0 ):
-    echo("<div class='related-element-cat left-border'>");
-        else :
-        echo("<div class='related-element-cat'>");
-
-            endif;
-
-
-            $project_list ="<ul>";
-
-
-                foreach( $project_link as $post ):
-
-                    //Garde un compte des projets
-                    $project_number = $project_number+1;
-
-                    // Setup this post for WP functions (variable must be named $post).
-                    setup_postdata($post);
+                endif;
 
 
-                    $permalink = get_permalink();
-                    $title = get_the_title();
+                $project_list ="<ul>";
 
-                    //Fait des "li" pour chaque projets et les ajoutes à la suite.
-                    $project_list = $project_list.'<li><a href="'.$permalink.'">'.$title.'</a></li>';
-    
-                endforeach;
-    
-                    $titre = ($project_number>1)?"Projets liés":"Projet lié";
-                
-    
-                echo "<h3>".$titre." (".$project_number.")</h3>";
-    
-            echo $project_list.'</ul>';
-          
-            ?>
+
+                    foreach( $project_link as $post ):
+
+                        //Garde un compte des projets
+                        $project_number = $project_number+1;
+
+                        // Setup this post for WP functions (variable must be named $post).
+                        setup_postdata($post);
+
+
+                        $permalink = get_permalink();
+                        $title = get_the_title();
+
+                        //Fait des "li" pour chaque projets et les ajoutes à la suite.
+                        $project_list = $project_list.'<li><a href="'.$permalink.'">'.$title.'</a></li>';
+        
+                    endforeach;
+        
+                        $titre = ($project_number>1)?"Projets liés":"Projet lié";
+                    
+        
+                    echo "<h4>".$titre." (".$project_number.")</h4>";
+        
+                echo $project_list.'</ul>';
+            
+                ?>
 
 
 

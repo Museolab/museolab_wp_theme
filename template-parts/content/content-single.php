@@ -1,5 +1,6 @@
 <!--
 DEBUT content-single.php page here
+DISPLAY ARTICLE CONTENT
 -->
 
 

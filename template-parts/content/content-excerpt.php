@@ -18,9 +18,10 @@
 
 <article class="m-thumb-container" style="background: url('<?php the_post_thumbnail_url() ?>'); background-size: cover;">
     <a class="overlay" href=" <?php the_permalink() ?>">
-        <div class="items"></div>
+
         <div class="items head">
-            <p><?php the_title(); ?></p>
+            <p><?php the_title(); ?>
+            </p>
             <hr>
         </div>
         <div class="items price">
@@ -28,22 +29,21 @@
 
 
             <?php
-            
-            
+
             $excerpt = get_field( 'post_excerpt' );
             
             if (empty($excerpt)){
-                $excerpt = the_excerpt();
+                $excerpt = wp_trim_excerpt(the_excerpt());
             };
             
-            echo ( '<p class="new">'.$excerpt.'</p>' );
+            echo ( '<p>'.$excerpt.'</p>' );
             
             ?>
 
         </div>
         <div class="items cart">
             <i class="fa fa-plus-square"></i>
-            <span>Voir plus</span>
+            <span>Voir le projet</span>
         </div>
     </a>
 </article>

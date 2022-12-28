@@ -4,14 +4,14 @@ Arguments pris en compte:
 
 number : Nombre de projets à afficher
 
-
+DISPLAY NEWEST ARTICLES ON THE HOME PAGE
 -->
 
 
 
 
 <?php
-
+    // Défini le nombre de vignette à afficher
         $nombreDArticles = 6;
         if (is_numeric ($args['number'])){
             
@@ -21,7 +21,7 @@ number : Nombre de projets à afficher
 
         }
 
-        ///ICI on fait une requete des derniers projets (avec un filtre pour enlever ceux sans images)
+        ///ICI on fait une requete des derniers articles (avec un filtre pour enlever ceux sans images)
         
         $last_articles = array(
         'post_status' => 'publish',
@@ -40,9 +40,9 @@ number : Nombre de projets à afficher
 
 
 <div class="bloc-recents bloc-article-recent">
-    <span class='titre-recent'>
+    <h2 class='titre-recent'>
         Articles récents
-    </span>
+        </h2>
 
     <div class="conteneur-recent">
 
@@ -62,7 +62,7 @@ number : Nombre de projets à afficher
             ?>
 
         </div>
-        <button class="contenu-button" onclick="window.location.href =' <?php echo get_post_type_archive_link( 'post' ); ?>'"> <i class="fa fa-plus plus-content-icon"></i>
+        <button class="contenu-button" onclick="window.location.href ='<?php echo get_post_type_archive_link( 'post' ); ?>'"> <i class="fa fa-plus plus-content-icon"></i>
         </button>
 
         
@@ -79,34 +79,12 @@ number : Nombre de projets à afficher
 
 
 
-<!--<div class="bloc-recents bloc-test-recent">
-    <span class='titre-recent'>
-        Test récent
-    </span>
-
-    <div class="conteneur-recent">
-
-        <div class="contenu-recent">
-
-            
-            
-            
-        </div>
-        <button class="contenu-button">+</button>
-
-
-    </div>
-
-
-</div>-->
-
-
 <?php
             
 
 
         } else {
-            echo('Aucuns articles à afficher <br>');
+            echo('Aucun article à afficher <br>');
             
             
 

@@ -7,7 +7,7 @@
 
             <div class="new-paysage-footer">
 
-
+                <!-- The shape above the footer -->
                 <svg version="1.1" class="paysage-svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  style="height:50px,bottom:0" viewBox="0 0 500.6 60.6" xml:space="preserve">
 
                       <defs>
@@ -27,38 +27,63 @@
         
             </div>
             
-   
-            
-            
-            
-            <small>Un site développé par nous pour nous.</small>
-            
-            
-            <ul>
-            
+            <div class="logoReso">
 
-
-                    <li>
-                        <div class="site-logo"><?php the_custom_logo(); ?></div>
-                    </li>
-
-                    <li>
+                <div class="divLogo">
+                    <ul>
+                        <li>
                             <a href="https://louvrelensvallee.com/" target="_blank" title="Louvre Lens Vallée">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/LogoLLV.png" class="custom-logo" alt="" width="auto" height="50" style="filter: grayscale(100%);"></a>
-                    </li>
-                    <li> <a href="http://www.univ-artois.fr/" target="_blank" title="Université d'Artois">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Artois_Logo.png" class="custom-logo" alt="" width="auto" height="50" style="filter: grayscale(100%);"></a>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/00_Museolab_Noir.png" class="footer-logo" alt="" width="auto" height="50" style="filter: grayscale(100%);"></a>
+                        </li>
+                        <li>
+                            <a href="https://louvrelensvallee.com/" target="_blank" title="Louvre Lens Vallée">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/LogoLLV.png" class="footer-logo" alt="" width="auto" height="50" style="filter: grayscale(100%);"></a>
+                        </li>
+                        <li> <a href="http://www.univ-artois.fr/" target="_blank" title="Université d'Artois">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Artois_Logo.png" class="footer-logo" alt="" width="auto" height="50" style="filter: grayscale(100%);"></a>
+                            
+                        </li>
+                    </ul>
+                    <small>Un site développé par nous pour nous.</small>
+                </div>
+                <div class="reso">
+                    
+                    
+                    <h5>SUIVEZ-NOUS</h5>
+                  
+                     &ensp;
+                    <a href=""><i class="fab fa-facebook fa-3x"></i></a>
+                     &ensp;
+                    <a href=""><i class="fab fa-linkedin fa-3x"></i></a>
+                     &ensp;
+                    <a href=""><i class="fab fa-github fa-3x"></i></a>
+                     &ensp;
+                    <a href=""><i class="fab fa-instagram fa-3x"></i></a>
+                    
+                    
 
-                    </li>
-                         
-          </ul>
+                    
+                    
+                </div>
+            </div>
+
+
             
+            
+            <div class="mentionLeg">
+                <ul>
+                    <li><a href="">MENTIONS LEGALES</a></li>
+                    <li><a href="">CGU</a></li>
+                    <li><a href="http://localhost:8000/politique-de-confidentialite/">POLITIQUE DE CONFIDENTIALITE</a></li>
+                    <li><a href="">GESTION DES COOKIES</a></li>
+                </ul>
+            </div>
             
         </footer><!-- #colophon -->
 
     </div><!-- #page -->
 
-    <!--TotoToto-->
+
 
     <?php wp_footer(); ?>
 

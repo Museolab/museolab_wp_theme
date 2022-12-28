@@ -16,7 +16,7 @@ if( $image ):
     $alt = $image['alt'];
     $caption = $image['caption'];
 
- ?>
+?>
 
 <div class="content-single-image <?php echo($style)?>">
 

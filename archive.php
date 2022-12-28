@@ -13,14 +13,18 @@ get_header();
 
 ?>
 
-
+<!-- Display Archives Projects Page -->
 
 <div class="bloc-recents bloc-article-recent">
-    <span class='titre-recent'>
+    <h1 class='titre-recent'>
     <?php post_type_archive_title(); ?>
-    </span>
+</h1>
 
+<?php 
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
+$wp_query = new WP_Query(array('post_type'=>'projets', 'post_status'=>'publish', 'posts_per_page'=>9, 'paged' => $paged));
+?>
 
 
     

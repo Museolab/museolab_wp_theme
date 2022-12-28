@@ -13,7 +13,6 @@
 
 
     
-
 <?php 
     
     $post_ID = $args[0];
@@ -47,7 +46,7 @@
             <hr>
         </div>
         <div class="items price">
-            <!--            <p class="old">$699</p>-->
+
             <p class="new"><?php the_field( 'description' , $post_ID  ); ?></p>
         </div>
         <div class="items cart">

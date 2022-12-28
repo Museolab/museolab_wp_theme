@@ -1,5 +1,7 @@
 <!--DEBUT DE single header PHP-->
 
+<!-- Load the h1 for single articles & projects & equipments -->
+
 <div class="project-header">
 
 

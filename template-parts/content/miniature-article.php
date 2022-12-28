@@ -11,7 +11,7 @@
 
 ?>
 
-
+<!-- DISPLAY MINIATURE ARTICLE -->
 
 <!-- DEBUT content-excerpt.php -->
 
@@ -19,11 +19,14 @@
     
     <a class="m-article" href=" <?php the_permalink() ?>">
         
-        <div class="items head">
-            <span class="m-article-title"><?php the_title(); ?></span><span class="m-article-date"> - <?php echo get_the_date(); ?> </span>
+        <div class="m-article-head">
+            <span class="m-article-title"><?php echo wp_trim_words( get_the_title(), 4 ); ?></span>
+            <span class="m-article-date"> - <?php echo get_the_date(); ?> </span>
             
         </div>
-        <div class="items"><span class="m-article-resume">  	<?php echo get_field('post_excerpt', get_the_ID()); ?>   </span></div>
+        <!-- <div class="items"> -->
+        <span class="m-article-resume">  	<?php echo get_field('post_excerpt', get_the_ID()); ?>   </span>
+        <!-- </div> -->
 
     </a>
 </article>

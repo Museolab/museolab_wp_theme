@@ -1,17 +1,17 @@
-<!--DEBUUT : last-project.php
+<!--DEBUUT : projets-recents.php
 
 Arguments pris en compte:
 
 number : Nombre de projets à afficher
 
-
+DISPLAY NEWEST PROJECTS ON THE HOME PAGE
 -->
 
 
 
 
 <?php
-
+        // Défini le nombre de vignette à afficher
         $nombreDeProjets = 3;
         if (is_numeric ($args['number'])){
             
@@ -41,9 +41,9 @@ number : Nombre de projets à afficher
 
 
 <div class="bloc-recents">
-    <span class='titre-recent'>
+    <h2 class='titre-recent'>
         Projets récents
-    </span>
+        </h2>
     
     <div class="conteneur-recent">
 

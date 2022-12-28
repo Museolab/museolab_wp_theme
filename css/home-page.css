@@ -1,0 +1,371 @@
+/* MAIN PAGE BLOC */
+/* ARTICLE MINIATURE DESIGN */
+
+/* contains the main blocks apart from header and footer */
+.page-blocs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: cornflowerblue;
+    margin-top: 0;
+}
+
+/* contains museolab intro, logos, contact link and background picture */
+.bloc-splash {
+
+    background-color: hotpink;
+    margin-top: -3.5em;
+    /*décalage selon le header, à modifier selon le bandeau admin aussi */
+    height: calc(100vh - var(--header-height));
+    width: 100%;
+    overflow: hidden;
+}
+
+/* contains project and article sections */
+.bloc-contenu {
+
+    background-color: greenyellow;
+
+
+}
+
+/*header-wip*/
+.site,
+.site-content {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family: var(--global--font-primary);
+}
+
+/*header-wip*/
+.site-main {
+    padding: 0;
+
+}
+
+/* bottom of the bloc-splash (txt & link) */
+.infoTxt {
+    background-color: rgba(253, 253, 240, 0.45);
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* bottom of the bloc-splash (txt & link) */
+#bottom {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+
+.background-image-landing {
+    background-color: grey;
+    background-size: cover;
+    background-image: url('https://source.unsplash.com/1600x900/?$fablab');
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    transform: scale(1.1);
+
+    width: 100%;
+    height: 100%;
+}
+
+/* contains the museolab logo */
+.bloc {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    color: white;
+    font-size: 22px;
+}
+
+
+.main-logo {
+    width: 100%;
+    height: 100%;
+    background-blend-mode: difference;
+
+}
+
+
+.logo-institution {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+
+    height: 10%;
+    display: inline-block;
+
+}
+
+.small-logo {
+    height: 100%;
+    margin-left: 20px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.artois-logo {
+    height: 80%;
+}
+
+
+/* contains newest projects & title*/
+.bloc-recents {
+    background-color: gray;
+    max-width: none !important;
+    width: 100%;
+
+    padding: 0;
+    padding-bottom: 15px;
+    margin: auto;
+
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+/*title block newest projects & articles*/
+.titre-recent {
+
+    width: 100%;
+    height: auto;
+    font-size: 12rem;
+
+    display: inline;
+    line-height: 10rem;
+    height: 10rem;
+
+
+    color: white;
+    font-variant: small-caps;
+
+    vertical-align: bottom;
+    margin-bottom: -25px;
+
+}
+
+button {
+    margin: 10px
+}
+
+/* contains project miniature*/
+.m-thumb-container {
+    width: calc(100%/3.13);
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* display block newest article miniatures & title*/
+.bloc-article-recent {
+    background-color: darkslategray;
+    
+}
+
+/*contains the project & article miniatures*/
+.conteneur-recent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 20px 0 20px;
+
+}
+
+/*contains the project & article miniatures*/
+.contenu-recent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 2;
+}
+
+.contenu-button {
+
+    flex-grow: 0;
+    min-width: 60px;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+
+}
+
+
+/*Display one article miniature*/
+.m-article-container {
+
+    width: calc(100%/3.13);
+
+    margin: 10px auto 10px auto;
+
+    height: 150px;
+
+    background-position: center;
+    background-color: gainsboro;
+    
+    cursor: pointer;
+    box-shadow: 0 0 3px #000;
+    
+    color: white;
+
+}
+
+.m-article-container:hover{
+    background-color: gray;
+}
+
+/* contain title and resume */
+.m-article{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    margin:5px;
+}
+
+.m-article-head {
+    display:flex;
+    flex-direction:row;
+    flex-grow:1;
+    width:80%;
+    justify-content: center;
+}
+
+/*articles miniature title display*/
+.m-article-title {
+    font-size: 2.8rem;
+    font-variant:small-caps;
+    font-family: "Source Sans Pro";
+    font-weight:500;
+    overflow: hidden;
+}
+
+/* articles miniature date display */
+.m-article-date {
+    font-size: 1.5rem;
+    font-family:"Source Sans Pro";
+    width:50%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    margin-top:15px;
+}
+
+/* articles miniature resume */
+.m-article-resume{
+    font-size:15px;
+    /* line-height:10px; */
+    line-break:auto;
+    flex-grow:2;
+    text-align:start;
+    overflow: hidden;
+}
+
+/* Footer for the entire website */
+footer{
+    background-color: darkolivegreen;
+    width: 100%;
+    max-width: none !important;
+    padding-bottom: 0 !important;
+}
+
+
+/* Responsive design for small device */
+
+@media (max-width:850px) {
+
+    .bloc-recents,
+    .conteneur-recent,
+    .bloc-contenu,
+    .page-blocs-container {
+        display:flex;
+        flex-direction:column;
+        overflow:hidden;
+    }
+    .bloc-splash {
+        height:73vh;
+        display:flex;
+        flex-direction: column;
+    }
+    .main-logo {
+        margin-top:5rem;
+    }
+
+    #bottom {
+        bottom:80px;
+        right:inherit;
+        left:20px;
+    }
+    
+    .logo-institution {
+        display:flex;
+        height:10%;
+    }
+
+    .titre-recent {
+        height:auto;
+        font-size: 7rem;
+        margin:2px;
+        margin-bottom:10px;
+        line-height:90%;
+    }
+    
+    .contenu-recent,
+    .archive-container {
+        display:flex;
+        flex-direction: column;
+    }
+    .m-thumb-container {
+        margin:8px;
+        width:auto;
+    }
+    .m-article-container {
+        margin:7px;
+        width:100%;
+        height:80px;
+    }
+    .m-article-head {
+        font-size:small;
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        justify-content: space-evenly;
+        flex-grow:2;
+    }
+    .m-article-title {
+        font-size:2rem;
+        display:flex;
+        justify-content: flex-start;
+    }
+    .m-article-date {
+        display:flex;
+        margin:0;
+        justify-content: flex-start;
+    }
+    .m-article-resume {
+        text-align:left;
+        flex-grow:1;
+    }
+    .pagination {
+        width:90%;
+        }
+    .nav-links {
+        width:100%;
+        display:flex;
+        flex-direction: row;
+        font-size:medium;
+    }
+    .cart {
+        display:flex;
+        flex-direction:column;
+    }
+}

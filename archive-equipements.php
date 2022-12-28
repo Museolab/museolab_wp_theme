@@ -13,9 +13,13 @@
 
 get_header();
 
-//$description = get_the_archive_description();
 ?>
 <h1>équipements du muséolab</h1>
+
+
+<!-- <button onclick="window.location.href='./?view=all'">Voir tout</button>
+
+<button onclick="window.location.href='./'">Mis en avant</button> -->
 
 
 <button onclick="window.location.href='./?view=all'">Voir tout</button>
@@ -38,64 +42,88 @@ get_header();
    template if our URL ends in ?view=blog
  ****************************************************/
 
-$view = $_GET["view"]; 
+if ( isset($_GET["view"]) ) {
+    $view = $_GET["view"];
+}else{
+    $view = "default";
+}
 
-if ( $view == "blog" ) {
     
-    echo("totototo");
     
-} else if ($view == "all"){
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
     
-    $args = array(
-        'orderby' => 'rand',
-        'post_type' => 'equipements',
-    
-);
-    
-} else {
-    
-        
-    $args = array(
-    'orderby' => 'rand',
-    'post_type' => 'equipements',
-    'tax_query' => array(
-        array(
+
+    $argss = array(
+        'post_type'=>'equipements',
+        'post_status'=>'publish',
+        'posts_per_page'=>9,
+        'paged' => $paged,
+        'tax_query' => array(
             'taxonomy' => 'visibility',
             'field'    => 'slug',
-            'terms'    => 'mis-en-avant',
-        ),
-    ),
-);
+            'terms'    => 'mis-en-avant')
+        );
     
-}
+    
+    
+//Version switch case
+    //Ceci permettra bientôt de filter les différents types d'équipements selon leurs type.
+    
+switch ($view) {
+    case "blog":
+        
+        //Test
+        echo("new template");
+        break;
+        
+    case "all":
+    
+        //Modifier ici les arguments selon ce qu'on veux
+        $new_args = array(
+            'post_status' => array('publish', 'private') );
+    
+        $argss = array_replace($argss, $new_args);
+            break;
+        
+    default:
+    
+        //La query par defaut est au dessu
+
+    }
+    
+    
+    $query = new WP_Query( $argss );
+    
+    if ( $query->have_posts() ) :
+    
+
+ ?>
+    <!-- pagination here -->
+
+    <!-- the loop -->
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
     
     
 
-$query = new WP_Query( $args );
+    <?php get_template_part( 'template-parts/content/content-thumbnails', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) ); 
+    
+    get_field('equipements')
     
     ?>
 
 
 
-    <?php 
-// the query
-$the_query = new WP_Query( $args ); ?>
 
-    <?php if ( $the_query->have_posts() ) : ?>
+    <?php endwhile; 
+    
+    
 
-    <!-- pagination here -->
-
-    <!-- the loop -->
-    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-    <?php get_template_part( 'template-parts/content/content-thumbnails', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) ); ?>
-
-
-
-
-    <?php endwhile; ?>
+    ?>
     <!-- end of the loop -->
 
+    
+    
     <!-- pagination here -->
 
     <?php wp_reset_postdata(); ?>
@@ -108,6 +136,9 @@ $the_query = new WP_Query( $args ); ?>
 
 </div>
 
+<div class="pagination bloc-recents">
+    <?php get_template_part( 'template-parts/content/page-pagination'); ?>
+</div>
 
 <?php else : ?>
 <?php get_template_part( 'template-parts/content/content-none' ); ?>

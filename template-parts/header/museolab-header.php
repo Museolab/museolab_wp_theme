@@ -2,16 +2,20 @@
 DEBUT museolab-header.php
 -->
 
-
+<!-- Display the header on every page -->
 
         <!-- Header -->
         <header class="page-header">
 
             <nav>
                 <h2 class="logo" style='margin :0'><a href="<?php echo get_home_url(); ?>">
-                        <div class="site-logo"><?php the_custom_logo(); ?></div>
+                        <div class="site-logo">
+                    <span class="custom-logo-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/museolab_logo_small.png" class="custom-logo" alt="" decoding="async" width="163" height="50"></span>
+                    </div>
                     </a></h2>
+<!--
                 <ul>
+-->
                     <?php
 		wp_nav_menu(
 			array(
@@ -23,11 +27,15 @@ DEBUT museolab-header.php
 			)
 		);
 		?>
-                </ul>
+              <!--  </ul>-->
 
-                <button class="cta-contact">
-                    Call to Action button
-                </button>
+                <!-- <button class="user-register">
+                    S'inscrire
+                </button> -->
+                <!-- <button class="user-login">
+                    Se connecter
+                </button> -->
+
             </nav>
 
 

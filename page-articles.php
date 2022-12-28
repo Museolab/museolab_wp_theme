@@ -13,12 +13,13 @@ get_header();
 
 ?>
 
+<!-- Display Articles/Posts Archives Page -->
 
 
 <div class="bloc-recents bloc-article-recent">
-    <span class='titre-recent'>
+    <h1 class='titre-recent'>
         Articles
-    </span>
+    </h1>
     <?php
     
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;

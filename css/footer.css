@@ -2,8 +2,18 @@
 .page-footer {
     background: var(--main-footer-color);
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     position: relative;
+}
+
+.reso {
+    
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: flex-end;
+    margin:5px;
+    vertical-align: baseline;
 }
 
 .page-footer ul {
@@ -17,6 +27,16 @@
     margin: 10px;
 }
 
+.logoReso {
+    padding-top: 20px;
+    display:flex;
+    flex-direction: row;
+}
+
+.footer-logo{
+    height: 50px;
+    width: auto;
+}
 
 .new-paysage-footer {
     position: absolute;
@@ -45,3 +65,43 @@
     bottom: 0;
 }
 
+.mentionLeg {
+    display: flex;
+    justify-content:center;
+    color:var(--third-content-background);
+    border-top: solid 3px var(--third-content-background);
+    margin-right: 5rem;
+    margin-left:5rem;
+    margin-top:1rem;
+}
+
+.mentionLeg ul {
+    display: flex;
+    flex-grow:0;
+    justify-content:space-between;
+}
+
+@media (max-width:850px) {
+    .logoReso {
+        display:flex;
+        flex-direction: column;
+        width:auto;
+        margin-bottom:10px;
+    }
+    .divLogo {
+        width:fit-content;
+        margin-bottom:10px;
+    }
+    .mentionLeg {
+        margin:auto;
+    }
+}
+
+/* barbaric method to expend the mention legal nav bar */
+@media screen and (min-width:801px){
+    .mentionLeg ul {
+        display:flex;
+        width:1000px;
+        justify-content:space-between;
+    }
+}

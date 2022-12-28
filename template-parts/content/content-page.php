@@ -8,6 +8,7 @@
 
 <!--
 DEBUT content-page.php page here
+LOAD THE EQUIPMENT AND ABOUT PAGE
 -->
 
 

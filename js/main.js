@@ -82,7 +82,7 @@
     
     $search
     .on('submit', function(event){
-        console.log("toto");
+        console.log("articles");
     })
 
 

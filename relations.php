@@ -26,6 +26,9 @@ function related_elements($post_id){
 
   if ($related_elements){
       
+        if (!is_array($machine_related)){
+            $machine_related=[$machine_related];
+        };
       
       if (in_array('machines_linked',$related_elements)){
             $machine_related = get_field('les_machines', $post_id);
@@ -160,6 +163,11 @@ function check_removed_related($base_field, $post_id){
         
         $base_field_copie = "$base_field"."_copie";
         $related_elements = get_field('elements_linked');
+
+        // Turn into an array if there's more than one element
+        if (!is_array($related_elements)){
+            $related_elements=[$related_elements];
+        }
         
         $target_array_linked;
     
@@ -179,6 +187,10 @@ function check_removed_related($base_field, $post_id){
 
         $post_related = get_field($base_field, $post_id);
         $previous_post_related = get_field($base_field_copie, $post_id);
+
+        if (!is_array($post_related)){
+            $post_related=[$post_related];
+        }
     
         update_field('test02',$previous_post_related, $post_id );
 
@@ -196,8 +208,8 @@ function check_removed_related($base_field, $post_id){
                             $to_update_array = get_field($base_field, $to_remove_post); 
                 
                                     //update_field('test02',$to_update_array, [$post_id] );
-
-                
+                            error_log("tototott");
+                            error_log($post_id);
                             $new_array = array_diff($to_update_array,[$post_id]); 
                             update_field($base_field, $new_array, $to_remove_post);
                             update_field($base_field_copie, $new_array, $to_remove_post);
@@ -211,7 +223,7 @@ function check_removed_related($base_field, $post_id){
                             }
                     endforeach;
             }else{
-                $to_update_posts = array_diff($previous_post_related,[$post_related]);
+                $to_update_posts = array_diff($previous_post_related,$post_related);
                 
                 update_field('boolea',"$base_field on vire une selection", $post_id );
                 //update_field('test02',$to_update_posts, [$post_id] );
@@ -219,14 +231,19 @@ function check_removed_related($base_field, $post_id){
 
                 foreach( $to_update_posts as $target_post ): 
                             $to_update_array = get_field($base_field, $target_post);   
+                            if (!is_array($to_update_array)){
+                                $to_update_array=[];
+                            }
                             $new_array = array_diff($to_update_array,[$post_id]); 
-                            update_field($base_field, $new_array, $target_post);
 
                             ///Si le tableau qu'on injecte est vide, on enlève la case cochée correspondante
                             if (empty($new_array)){
                                 $linked_target = get_field('elements_linked', $target_post);
                                 $new_linked = array_diff($to_update_array,[$target_array_linked]); 
                                 update_field('elements_linked', $new_linked, $target_post);
+                            }else{
+                                update_field($base_field, $new_array, $target_post);
+
                             }
 
                     endforeach; 

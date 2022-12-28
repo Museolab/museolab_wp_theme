@@ -1,40 +1,63 @@
-<!-- DEBUT index.php -->
+<!--
+DEBUT page-articles.php page here
+-->
+
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * The template for displaying archive pages
  */
+
 
 get_header();
 
-if ( have_posts() ) {
 
-	// Load posts loop.
-	while ( have_posts() ) {
-		the_post();
+?>
 
-		get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
-	}
+<!-- Display Articles/Posts Archives Page -->
 
-	// Previous/next page navigation.
-	twenty_twenty_one_the_posts_navigation();
 
-} else {
+<div class="bloc-recents bloc-article-recent">
+    <h1 class='titre-recent'>
+        Articles
+    </h1>
+    <?php
+    
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    
+$wp_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>12,'paged' => $paged));
 
-	// If no content, include the "No posts found" template.
-	get_template_part( 'template-parts/content/content-none' );
 
-}
 
-get_footer();
+if ( have_posts() ) :
 
+
+
+?>
+
+
+
+
+    <div class="archive-container">
+        <?php
+    while ( have_posts() ) : 
+        the_post();
+        get_template_part( 'template-parts/content/miniature-article'  );
+     endwhile; ?>
+
+    </div>
+
+    <?php 
+    get_template_part( 'template-parts/content/page-pagination');   
+
+    else : 
+        get_template_part( 'template-parts/content/content-none' ); 
+    endif; ?>
+
+</div>
+
+
+<?php get_footer(); ?>
+
+<!--
+FIN archive.php page here
+-->

@@ -77,25 +77,26 @@ while ( have_posts() ) :
             )
         );
         $relatedBlogPosts = new WP_Query($relatedBlogPostArgs);
+        ?>
+
+        
+            <?php
+            if( $relatedBlogPosts->have_posts() ){
+
+                echo('<h2>Ressources liées et fiches techniques</h2><br>');
+
+                // Start looping over the query results.
+                while ( $relatedBlogPosts->have_posts() ) {
+
+                    $relatedBlogPosts->the_post();
+
+            ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class( 'reference_article' ); ?>>
+                <?php get_template_part( 'template-parts/content/content-excerpt'  ); ?>
 
 
-        if( $relatedBlogPosts->have_posts() ){
-
-            echo('<h2>Ressources liées</h2><br>');
-
-              // Start looping over the query results.
-            while ( $relatedBlogPosts->have_posts() ) {
-
-                $relatedBlogPosts->the_post();
-
-                ?>
-
-        <article id="post-<?php the_ID(); ?>" <?php post_class( 'reference_article' ); ?>>
-            <?php get_template_part( 'template-parts/content/content-excerpt'  ); ?>
-
-
-        </article>
-
+            </article>
+        </div>
         <?php
 
         }
@@ -111,13 +112,12 @@ while ( have_posts() ) :
 
 
         
-		?>
+		?> -->
     </div><!-- .entry-content -->
 
     <footer class="entry-footer default-max-width">
         
 <!--Leave a comment?
-        <?php twenty_twenty_one_entry_meta_footer(); ?>
 -->
         
     </footer><!-- .entry-footer -->

@@ -19,7 +19,7 @@
     <a class="overlay" href=" <?php the_permalink() ?>">
         <br>
         <div class="items head">
-            <p><?php the_title(); ?></p>
+            <p><?php echo wp_trim_words( get_the_title(), 5 ); ?></p>
             <hr>
         </div>
         <div class="items price">
@@ -28,9 +28,9 @@
             
             
         </div>
-        <div class="items plus-square">
+        <div class="items cart">
             <i class="far fa-plus-square"></i>
-            <span>Voir plus</span>
+            <span>Voir le projet</span>
         </div>
     </a>
 </article>

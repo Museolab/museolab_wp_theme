@@ -1,5 +1,7 @@
 /*  CSS lié a la page content-excerpt.php  */
+/* Design of projects miniatures */
 
+/* contain every miniatures */
 .archive-container {
     display:inline-flex;
         flex-direction: row;
@@ -7,6 +9,7 @@
     justify-content: center;
 }
 
+/* contain one miniature */
 .m-thumb-container {
 
     width: 480px;
@@ -19,60 +22,71 @@
     -webkit-box-shadow: 0 0 3px #000;
     box-shadow: 0 0 3px #000;
     overflow: hidden;
-
-
 }
 
+
+/* where the title, resume and button are displayed */
 .overlay {
+    
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 2fr 1fr;
+    display: flex;
+    flex-direction: column;
     background: rgba(77, 77, 77, .9);
     color: #fef5df;
     opacity: 1;
     background: linear-gradient(rgba(77, 77, 77, .0), rgba(77, 77, 77, .9), rgba(77, 77, 77, .9));
+    font-family: 'Source Sans Pro', sans-serif;
     transform: translateY(190px);
     transition: all 0.5s;
-    font-family: 'Source Sans Pro', sans-serif;
 }
 
-
+/* all of the element displayed by the hover effect */
 .items {
     padding-left: 20px;
-    padding-top: 20px;
     letter-spacing: 3px;
 }
 
-
+/* hold the title*/
 .head {
     font-size: 30px;
-    line-height: 10px;
+    line-height: normal;
     transform: translateY(0px);
     transition: all 0.7s;
+    flex-grow:1
 }
 
+/* Style the project title */
+.head p {
+    font-size:3rem;
+    margin-bottom:5px;
+}
+
+/* decorative line display in hover animation */
 .head hr {
     display: block;
     width: 0;
     border: none;
     border-bottom: solid 2px #fef5df;
     position: absolute;
-    bottom: 0;
+    margin-bottom:10px;
     left: 20px;
     transition: all 0.5s;
 }
 
+/* hold the resume */
 .price {
     font-size: 22px;
-    line-height: 20px;
     font-weight: lighter;
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.7s;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    flex-grow:2
 }
 
+/* button 'voir plus' on the home page */
 .cart {
     font-size: 12px;
     opacity: 0;
@@ -82,17 +96,20 @@
     transition: all 0.7s;
 }
 
+/* icône */
 .cart i {
     font-size: 16px;
 }
 
+/* button page */
 .cart span {
     margin-left: 10px;
 }
 
+
 .m-thumb-container:hover .overlay {
     transform: translateY(0px);
-
+    
     opacity: 1;
     background: rgba(77, 77, 77, .9);
 }
@@ -118,12 +135,37 @@
     opacity: 1;
 }
 
-
-
-
-
+/*
 
 .custom-logo {
     vertical-align: top;
+
+}
+*/
+
+
+/* Responsive design for miniature */
+
+@media (max-width:850px) {
+    .overlay {
+        transform:none;
+        transition:none;
+        position:relative;
+        display:grid;
+    }
+    .head{
+        font-size:smaller;
+        height:fit-content;
+    }
+    .price {
+        visibility:visible;
+        position:absolute;
+        transform:none;
+        padding:0;
+        display:contents;
+    }
+    .cart {
+        transform: none;
+    }
 
 }

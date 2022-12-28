@@ -111,4 +111,4 @@ while ( have_posts() ) {
 
 get_footer();
 
-<!-- FIN image.php -->
+// <!-- FIN image.php -->
