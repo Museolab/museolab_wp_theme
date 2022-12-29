@@ -522,12 +522,12 @@ function edit_tags($post_id){
     }
     
     //Récupère le champ "content_category" et les ajoute à la chaine
-    $post_types = get_field('content_category', $post_id);
+    $post_categorys = get_field('content_category', $post_id);
     
-    if( $post_types ){
-        foreach( $post_types as $post_type ){
+    if( $post_categorys ){
+        foreach( $post_categorys as $post_category ){
             $new_tags .= ', ';
-            $new_tags .= strval($post_type);
+            $new_tags .= strval($post_category);
         }
     }
     
