@@ -8,7 +8,24 @@
 
     <div class="titre-splash-article">
 
-        <h1>Projet : <?php the_title( '', '' ); ?></h1>
+        <h1>
+            <?php 
+            
+            $titre ='';
+            $post_type = get_post_type();
+
+    
+    
+    if ( $post_type == 'projets' ){
+                    $titre = '[Projet] ';
+    } else if ($post_type == 'post'){
+                    $titre = '[Article] ';
+    }else if ($post_type == 'equipements'){
+                    $titre= '[Equipement] ';
+    }
+            $titre .= get_the_title();
+            echo($titre); ?>
+        </h1>
     </div>
 
 
