@@ -495,24 +495,64 @@ function edit_tags($post_id){
     
     
     //Enlève les liens machines existant
-    wp_set_post_terms(  $post_id, $tags = '', $taxonomy = 'related_machine', $append = false );
+    //wp_set_post_terms(  $post_id, $tags = '', $taxonomy = 'related_machine', $append = false );
+    
+    //$old_tag = get_the_tags($post_id);
     
     
-    $old_tag = get_the_tags($post_id);
+    
+    
+    //Crée une chaine de caractère vierge pour les tags
+    $new_tags = '';
     
    
+    //Récupère le champ "visibilite" et l'ajoute à la chaine
     $the_visibility = get_field( 'visibilite' , $post_id) ;
+    $new_tags .=  strval($the_visibility);
+    
+    
+    //Récupère le champ "type_equipement" et les ajoute à la chaine
+    $equipement_types = get_field('type_equipement', $post_id);
+    
+    if( $equipement_types ){
+        foreach( $equipement_types as $equipement_type ){
+            $new_tags .= ', ';
+            $new_tags .= strval($equipement_type);
+        }
+    }
+    
+    //Récupère le champ "content_category" et les ajoute à la chaine
+    $post_types = get_field('content_category', $post_id);
+    
+    if( $post_types ){
+        foreach( $post_types as $post_type ){
+            $new_tags .= ', ';
+            $new_tags .= strval($post_type);
+        }
+    }
+    
+    
+    //Récupère le champ "custom_tags" et les ajoute à la chaine
+    $custom_tags = get_field('custom_tags', $post_id);
+    
+    if( $custom_tags ){
+        foreach( $custom_tags as $custom_tag ){
+            $new_tags .= ', ';
+            $new_tags .= strval($custom_tag);
+        }
+    }
+    
     
     // $value = $the_visibility['value'];
     
     
- 
-    wp_set_post_tags($post_id, $tags=$the_visibility);
+    // Applique les nouveaux tags 
+    wp_set_post_tags($post_id, $tags=$new_tags);
     
     
     
     //Vérifie si il existe des liens machine
-    $has_machine_link = get_field( 'machines_linked' , $post_id) ;
+ /*   $has_machine_link = get_field( 'machines_linked' , $post_id) ;
     if ( $has_machine_link ) {       
         
         if( have_rows('les_machines') ){
@@ -553,7 +593,7 @@ function edit_tags($post_id){
     };
     
     
-    
+    */
     
     
 }
