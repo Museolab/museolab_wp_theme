@@ -490,8 +490,25 @@ add_action('save_post', 'edit_tags');
 
 function edit_tags($post_id){
     
+    
+    /// Les TAGS pour : La visibilité du post, le type de contenu, le type d'équipement, et bien d'autres !
+    
+    
     //Enlève les liens machines existant
     wp_set_post_terms(  $post_id, $tags = '', $taxonomy = 'related_machine', $append = false );
+    
+    
+    $old_tag = get_the_tags($post_id);
+    
+   
+    $the_visibility = get_field( 'visibilite' , $post_id) ;
+    
+    // $value = $the_visibility['value'];
+    
+    
+ 
+    wp_set_post_tags($post_id, $tags=$the_visibility);
+    
     
     
     //Vérifie si il existe des liens machine
@@ -534,6 +551,11 @@ function edit_tags($post_id){
             endwhile;
         }
     };
+    
+    
+    
+    
+    
 }
 
 
