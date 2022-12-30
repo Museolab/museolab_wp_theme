@@ -12,7 +12,7 @@ DISPLAY ARTICLE CONTENT
     get_template_part('template-parts/content/single-header');
      
 
-    get_template_part('template-parts/content/content-excerpt2');
+    get_template_part('template-parts/content/content-resume');
     
 ?>
 

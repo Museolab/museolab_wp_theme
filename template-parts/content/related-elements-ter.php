@@ -43,7 +43,7 @@ if ($myposttype == 'equipements'){
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'left' ); ?>>
     coucou
-    <?php get_template_part( 'template-parts/content/content-excerpt'  ); ?>
+    <?php get_template_part( 'template-parts/content/miniature-projet'  ); ?>
 
 
 </article>

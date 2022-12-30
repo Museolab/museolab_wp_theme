@@ -1,26 +1,23 @@
 <!--DEBUT DE SINGLE-PROJETS PHP-->
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all single projects
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
  */
 
+//the website header
 get_header();
-
 
 /* Start the Loop */
 while ( have_posts() ) :
 
-
 	the_post();
+    
+    //permet d'alterner les styles des différents éléments
     $contenu_pair = 0;
 
 ?>
+
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -31,12 +28,8 @@ while ( have_posts() ) :
 
     get_template_part('template-parts/content/single-header');
     
-    get_template_part('template-parts/content/content-excerpt2');
+    get_template_part('template-parts/content/content-resume');
 
-
-
-    
-/*        get_template_part( 'template-parts/content/render-contents'); */
             
 
 

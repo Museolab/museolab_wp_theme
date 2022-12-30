@@ -3,13 +3,7 @@
 <?php
 
 /**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * The template for displaying all single equipment page
  */
 
 get_header();
@@ -23,7 +17,13 @@ while ( have_posts() ) :
 
     <header class="entry-header alignwide">
 
-        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        <?php
+        
+        get_template_part('template-parts/content/single-header');
+    
+        get_template_part('template-parts/content/content-resume');
+        
+ ?>
 
     </header>
 
@@ -92,7 +92,7 @@ while ( have_posts() ) :
 
             ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class( 'reference_article' ); ?>>
-                <?php get_template_part( 'template-parts/content/content-excerpt'  ); ?>
+                <?php get_template_part( 'template-parts/content/miniature-projet'  ); ?>
 
 
             </article>

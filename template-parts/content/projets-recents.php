@@ -34,6 +34,8 @@ DISPLAY NEWEST PROJECTS ON THE HOME PAGE
         $last_projects = new WP_Query($last_projects);
 
 
+
+
         if( $last_projects->have_posts() ){
             
             
@@ -54,11 +56,10 @@ DISPLAY NEWEST PROJECTS ON THE HOME PAGE
 
                 $last_projects->the_post();
 
-               get_template_part( 'template-parts/content/content-excerpt'  );
+               get_template_part( 'template-parts/content/miniature-projet'  );
 
 
         }
-            
             
             ?>
      
