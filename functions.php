@@ -288,6 +288,9 @@ function admin_css() {
 	$admin_stylesheet = get_template_directory_uri() . '/css/admin.css';
 
 	wp_enqueue_style($admin_handle, $admin_stylesheet);
+    
+    //debug_to_console('admin css ok');
+    
 }
 add_action('admin_print_styles', 'admin_css', 11);
 
@@ -602,6 +605,11 @@ function edit_tags($post_id){
 
 
 add_action('save_post', 'related_elements');
+
+/*
+add_action( 'edit_attachment', 'related_medias' );
+*/
+
 
 
 //Va chercher un block spécifique et ajoute ou enlève un tag à la publication si il est présent ou pas 

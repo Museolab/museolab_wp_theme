@@ -4,5 +4,5 @@
 }
 
 .hidden-acf{
-    display: none;
+    display: none !important;
 }

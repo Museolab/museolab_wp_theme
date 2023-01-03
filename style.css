@@ -3,7 +3,7 @@ Theme Name: Museolab
 Description: Theme du site muséolab - Univ Artois - Louvre Lens Vallée -- Nécéssite ACF Pro 6.0 or higher
 Author: Léo Marius - Amandine Ozdemir - Univ Artois - LLV
 Author URI: https://louvrelensvallee.com
-Version: 0.1.0
+Version: 0.1.1
 */
 
 
@@ -183,9 +183,10 @@ article {
     font-size: 3rem;
     font-style: italic;
     font-weight:500;
-    font-variant:small-caps;
+/*    font-variant:small-caps;
     font-family:"Source Sans Pro";
-    color:white;
+    color:white;*/
+    text-align: center;
 }
 
 .related-element-container {
@@ -260,6 +261,12 @@ article {
     display:flex;
     flex-direction: row;
 }
+
+.default_text_content{
+    
+    max-width: 1200px;
+}
+
 
 @media (max-width:850px) {
     /* p,

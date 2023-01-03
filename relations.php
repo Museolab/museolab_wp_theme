@@ -1,6 +1,11 @@
 <?php
 
 
+
+
+
+
+
 function related_elements($post_id){
         
     //Vérifie si des éléments sont liés (une des trois cases cochées)
@@ -21,23 +26,57 @@ function related_elements($post_id){
                     $base_post_field= 'les_machines';
     }
     
-    /*
-    switch($post_type){
-        case 'projets':
-            $base_post_field = 'les_projets';
-            break;
-        case 'post':
-            $base_post_field = 'les_articles';
-            break;
-        case 'equipements':
-            $base_post_field= 'les_machines';
-            break;
-    }
-*/
     
     
     //Si un case est cochée
     if ($related_elements){
+            
+
+        $images_related = array();
+        
+        // Check si des images sont associées.
+        if( have_rows('images_associes') ){
+        
+            // Loop through rows.
+            while( have_rows('images_associes') ) : the_row();
+        
+                
+                $media_tags = get_sub_field('media_tags');
+        
+                // Load sub field value.
+                $image_array = get_sub_field('galerie_image');
+                // Do something...
+        
+                if($media_tags && (in_array('media_no_link',$media_tags) or in_array('media_none',$media_tags)      ) ) {
+                    
+                        error_log('not to be associated');
+
+                    } else{
+                    
+                    error_log('associons nous :) ');
+                    
+                    $image_array = get_sub_field('galerie_image');
+                    
+                    array_push($images_related, $image_array);
+                        
+
+                }
+                    
+
+                
+                
+
+
+
+            // End loop.
+            endwhile;
+
+        } else {
+            
+        }
+        
+
+        
       
       //Si la case machine, on récupère la valeure => si plusieurs valeures : tableau, sinon on crée le tableau
       if (in_array('machines_linked',$related_elements)){
@@ -49,7 +88,9 @@ function related_elements($post_id){
           
           //Pour chaque id du tableau on va aller ajouter notre valeure à la sienne
             foreach( $machine_related as $machines ): 
-                add_to_related($machines, $post_id, $base_post_field);
+          
+                add_to_related($machines, $post_id, $base_post_field, $images_related);
+          
             endforeach;       
           
       }else{
@@ -67,7 +108,7 @@ function related_elements($post_id){
             }
           
             foreach( $project_related as $project ): 
-                add_to_related($project, $post_id, $base_post_field);
+                add_to_related($project, $post_id, $base_post_field, $images_related);
             endforeach;
       }else{
           update_field('les_projets', array());
@@ -85,7 +126,7 @@ function related_elements($post_id){
             }
           
           foreach( $post_related as $my_post ): 
-            add_to_related($my_post, $post_id, $base_post_field);
+            add_to_related($my_post, $post_id, $base_post_field, $images_related);
           endforeach;
       }else{
           update_field('les_articles', array());
@@ -122,7 +163,7 @@ function related_elements($post_id){
 
 function check_removed_related($base_field, $post_id, $base_post_field){
     
-                    error_log('J edite : '.$base_post_field);
+        //            error_log('J edite : '.$base_post_field);
 
     
     
@@ -164,38 +205,7 @@ function check_removed_related($base_field, $post_id, $base_post_field){
             if (!is_array($previous_post_related)){
                 $previous_post_related = array($previous_post_related) ;
             }
-            
-            ///Si la case est décochée
-            /*if ( !in_array($target_array_linked, $related_elements ) ){
 
-                    //on enlève la référence à tous les éléments passés
-                    foreach( $previous_post_related as $to_remove_post ):
-                
-                            $to_update_array = get_field($base_post_field, $to_remove_post); 
-                
-                
-                            if (!is_array($to_update_array)){
-                                $to_update_array = array($to_update_array) ;
-                            }
-
-                
-                
-                
-                            $new_array = array_diff($to_update_array,[$post_id]); 
-                
-                
-                            update_field($base_field, $new_array, $to_remove_post);
-                            update_field($base_field_copie, $new_array, $to_remove_post);
-
-
-                            ///Si le tableau qu'on injecte est vide, on enlève la case cochée correspondante
-                            if (empty($new_array)){
-                                $linked_target = get_field('elements_linked', $to_remove_post);
-                                $new_linked = array_diff($to_update_array,[$target_array_linked]); 
-                                update_field('elements_linked', $new_linked, $to_remove_post);
-                            }
-                    endforeach;
-            }else{*/
                 
 /*                
                 error_log('previous_post_related');
@@ -209,8 +219,8 @@ function check_removed_related($base_field, $post_id, $base_post_field){
                 // On compare nos posts précédents et nos posts actuels
                 $to_update_posts = array_diff($previous_post_related,$post_related);
                 
-                error_log('$to_update_posts');
-                error_log( print_r($to_update_posts, TRUE) );
+       //         error_log('$to_update_posts');
+        //        error_log( print_r($to_update_posts, TRUE) );
                 
 
                 //pour chaque post qui a disparu
@@ -251,7 +261,10 @@ function check_removed_related($base_field, $post_id, $base_post_field){
 
 
 
-function add_to_related($target_id, $post_to_add, $base_post_field){
+function add_to_related($target_id, $post_to_add, $base_post_field, $images_related){
+    
+    //error_log('add to related');
+
 
     //On crée un tableau avec la valeur à ajouter
     $to_push_array= [$post_to_add];
@@ -269,6 +282,51 @@ function add_to_related($target_id, $post_to_add, $base_post_field){
     
     //met à jour le projet cible avec le tableau édité
     update_field($base_post_field, $to_push_array, $target_id);
+    
+    
+    
+    if (!empty($images_related)){
+    
+
+        $images_related_target = get_field('images_associes', $target_id);
+
+        
+        $images_related_target_ids = array();
+        
+        if( $images_related_target ) {
+            foreach( $images_related_target as $image_related_target ) {
+                array_push($images_related_target_ids, $image_related_target['galerie_image']);
+            }
+        } else {
+            $images_related_target = array();
+        }
+        
+        foreach($images_related as $image_related){
+            
+            if (in_array($image_related , $images_related_target_ids )){
+                
+                
+                
+            } else{
+                
+                $my_image_to_push= array('galerie_image'=>$image_related,'media_tags' => array()) ;
+                
+                array_push( $images_related_target , $my_image_to_push );
+                
+            }
+            
+        }
+        
+        /*
+        error_log('toto l 317');
+        error_log( print_r($images_related_target, TRUE) );
+        */
+        
+        //met à jour le champs des images
+        update_field('images_associes',$images_related_target, $target_id);
+
+    }
+    
     
     //on s'occupe des cases cochées
     //Recupère les cases cochées et vérifie que la donnée existe bien
@@ -304,4 +362,12 @@ function add_to_related($target_id, $post_to_add, $base_post_field){
 
 
     
+}
+
+
+function post_media_my_theme ( $attachment_id ){
+    
+                 //   error_log($attachment_id);
+
+    debug_to_console($attachment_id);
 }
