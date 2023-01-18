@@ -28,7 +28,8 @@ DISPLAY NEWEST PROJECTS ON THE HOME PAGE
         'post_type' => 'projets',
         'posts_per_page' => strval($nombreDeProjets),
         'order' => 'DESC',
-        'meta_query' => array(array('key' => '_thumbnail_id')),
+            
+            
 
         );
         $last_projects = new WP_Query($last_projects);

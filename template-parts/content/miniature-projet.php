@@ -15,8 +15,19 @@
 
 <!-- DEBUT content-excerpt.php -->
 
+<!--
+get_one_vignette_url()
+-->
 
-<article class="m-thumb-container" style="background: url('<?php the_post_thumbnail_url() ?>'); background-size: cover;">
+<?php 
+$the_miniature_url = get_one_vignette_url();
+
+
+?>
+
+
+
+<article class="m-thumb-container" style="background: url('<?php echo($the_miniature_url); ?>'); background-size: cover;">
     <a class="overlay" href=" <?php the_permalink() ?>">
 
         <div class="items head">

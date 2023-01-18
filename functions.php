@@ -667,11 +667,21 @@ function my_acf_op_init() {
 }
 
 
-function get_one_vignette_url(){
+function get_one_vignette_url($post_id=false, $size='full'){
+    
+/*
+    error_log('get_one_vignette_url');
+    error_log( print_r($post_id, TRUE) );
+*/
+    
+    if (!$post_id){
+        $post_id = false;
+    }
+    
     
     $vignette_url = array();
 
-    if ( have_rows( 'images_associes' ) ):
+    if ( have_rows( 'images_associes', $post_id) ):
     
     $can_be_erased = true;
     
@@ -694,7 +704,7 @@ function get_one_vignette_url(){
         
         $image_Id = get_sub_field('media_image_ID');
 
-        $image_to_display = wp_get_attachment_image_url($image_Id);
+        $image_to_display = wp_get_attachment_image_url($image_Id, $size);
 
         $can_be_erased = false;
     
@@ -710,22 +720,20 @@ function get_one_vignette_url(){
 
     endwhile;
     
-/*    if (empty($vignette_url)){
-        
-    }*/
-    
     else: 
     
-
-
 endif;
     
     if ($vignette_url){
+        
+/*
+            error_log( print_r($vignette_url[0], TRUE) );
+*/
+
+        
+        
         return $vignette_url[0];
     } else {
         return '';
     }
-
-    
-    
 }
