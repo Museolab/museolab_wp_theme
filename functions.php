@@ -666,3 +666,66 @@ function my_acf_op_init() {
     }
 }
 
+
+function get_one_vignette_url(){
+    
+    $vignette_url = array();
+
+    if ( have_rows( 'images_associes' ) ):
+    
+    $can_be_erased = true;
+    
+    while ( have_rows( 'images_associes' ) ) : the_row();
+    
+    
+    
+    $image_tags = get_sub_field('media_tags');
+        
+    if (!is_array($image_tags)){
+        $image_tags = array($image_tags);
+    }
+    
+    if (in_array('media_vignette',$image_tags)){
+        
+        //reset le tableau si on a déjà des trucs non voulu dedans
+        if ($vignette_url && $can_be_erased){
+            $vignette_url = array();
+        };
+        
+        $image_Id = get_sub_field('media_image_ID');
+
+        $image_to_display = wp_get_attachment_image_url($image_Id);
+
+        $can_be_erased = false;
+    
+        array_push($vignette_url,$image_to_display);
+    }
+    
+    //met quand même la première image sans tag si on a rien dedans
+    if (!$vignette_url){
+        $image_Id = get_sub_field('media_image_ID');
+        $image_to_display = wp_get_attachment_image_url($image_Id);
+        array_push($vignette_url,$image_to_display);
+    };
+
+    endwhile;
+    
+/*    if (empty($vignette_url)){
+        
+    }*/
+    
+    else: 
+    
+
+
+endif;
+    
+    if ($vignette_url){
+        return $vignette_url[0];
+    } else {
+        return '';
+    }
+
+    
+    
+}

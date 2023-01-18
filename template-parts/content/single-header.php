@@ -4,7 +4,15 @@
 
 <div class="project-header">
 
-    <div class="background-image-project" style="background-image:url('<?php echo(the_post_thumbnail_url()); ?>')">
+    <?php
+    $vignette_url = get_one_vignette_url();
+    ?>
+    
+    <div class="background-image-project" style="background-image:url('<?php echo($vignette_url); ?>')">
+        
+        
+        
+        
     </div>
 
     <span class='surtitre-splash-single'>
