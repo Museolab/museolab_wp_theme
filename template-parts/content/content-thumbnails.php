@@ -14,8 +14,9 @@
 
 <!--DEBUUT : content-thumbnails.php-->
 
+                    
 
-<article class="m-thumb-container" style="background: url('<?php the_post_thumbnail_url() ?>'); background-size: cover;">
+<article class="m-thumb-container" style="background: url('<?php echo(get_one_vignette_url()); ?>'); background-size: cover;">
     <a class="overlay" href=" <?php the_permalink() ?>">
         <br>
         <div class="items head">
