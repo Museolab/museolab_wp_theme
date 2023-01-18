@@ -28,56 +28,64 @@ function related_elements($post_id){
     
     
     
-    //Si un case est cochée
-    if ($related_elements){
-            
-
-        $images_related = array();
+    $images_related = array();
         
-        // Check si des images sont associées.
-        if( have_rows('images_associes') ){
+    // Check si des images sont associées.
+    if( have_rows('images_associes') ){
         
             // Loop through rows.
-            while( have_rows('images_associes') ) : the_row();
+        while( have_rows('images_associes') ) : the_row();
+
+            $media_tags = get_sub_field('media_tags');
+
+            // Load sub field value.
+            $image_ID = get_sub_field('media_image_ID');
+
         
+            if($media_tags && (in_array('media_no_link',$media_tags) or in_array('media_none',$media_tags)      ) ) {
                 
-                $media_tags = get_sub_field('media_tags');
-        
-                // Load sub field value.
-                $image_array = get_sub_field('galerie_image');
-                // Do something...
-        
-                if($media_tags && (in_array('media_no_link',$media_tags) or in_array('media_none',$media_tags)      ) ) {
-                    
-                        error_log('not to be associated');
-
-                    } else{
-                    
-                    error_log('associons nous :) ');
-                    
-                    $image_array = get_sub_field('galerie_image');
-                    
-                    array_push($images_related, $image_array);
-                        
-
-                }
-                    
-
+                //Ne rien faire si les liens ne sont pas voulus, ou qu'il n'y a pas d'images
                 
+                } else{
                 
-
-
-
-            // End loop.
-            endwhile;
-
-        } else {
-            
-        }
+                //ajouter mon ID d'image à mon tableau d'images liées.
+                array_push($images_related, $image_ID);
+            }
         
+        add_to_related($image_ID, $post_id, $base_post_field , array());
+        // End loop.
+        endwhile;
+    } else {
+        //Pas d'images, ne rien faire.
+    }
+    
+    $images_id_old = get_field('images_associes_backup',$post_id);
+    if (!is_array($images_id_old)){
+        $images_id_old = array($images_id_old);
+    }
+    
+/*    error_log('old images');
+    error_log( print_r($images_id_old, TRUE) );
+    
+    error_log('new images');
+    error_log( print_r($images_related, TRUE) );*/
 
+    $to_update_pictures = array_diff($images_id_old,$images_related);
+    
+    
+    if ( !empty($to_update_pictures) ){
         
-      
+        error_log('On enlève des référence aux images enlevées :');
+        error_log( print_r($to_update_pictures, TRUE) );
+    }
+
+    
+    update_field('images_associes_backup',$images_related,$post_id );
+    
+    
+    //Si un case est cochée
+    if ($related_elements){
+     
       //Si la case machine, on récupère la valeure => si plusieurs valeures : tableau, sinon on crée le tableau
       if (in_array('machines_linked',$related_elements)){
             $machine_related = get_field('les_machines', $post_id);
@@ -162,10 +170,6 @@ function related_elements($post_id){
 
 
 function check_removed_related($base_field, $post_id, $base_post_field){
-    
-        //            error_log('J edite : '.$base_post_field);
-
-    
     
         
         $base_field_copie = "$base_field"."_copie";
@@ -263,8 +267,6 @@ function check_removed_related($base_field, $post_id, $base_post_field){
 
 function add_to_related($target_id, $post_to_add, $base_post_field, $images_related){
     
-    //error_log('add to related');
-
 
     //On crée un tableau avec la valeur à ajouter
     $to_push_array= [$post_to_add];
@@ -284,39 +286,33 @@ function add_to_related($target_id, $post_to_add, $base_post_field, $images_rela
     update_field($base_post_field, $to_push_array, $target_id);
     
     
-    
-    if (!empty($images_related)){
-    
-
+    // Si des images associées sont présentes, on les lies également
+    if (  !empty($images_related)  ){
+        
+        
+        
         $images_related_target = get_field('images_associes', $target_id);
-
         
         $images_related_target_ids = array();
         
         if( $images_related_target ) {
             foreach( $images_related_target as $image_related_target ) {
-                array_push($images_related_target_ids, $image_related_target['galerie_image']);
+                array_push($images_related_target_ids, $image_related_target['media_image_ID']);
             }
         } else {
             $images_related_target = array();
         }
         
         foreach($images_related as $image_related){
-            
+            //Si l'image est déjà liée à la cible, on ignore, sinon on l'ajoute
             if (in_array($image_related , $images_related_target_ids )){
-                
-                
-                
+
             } else{
-                
-                $my_image_to_push= array('galerie_image'=>$image_related,'media_tags' => array()) ;
+                $my_image_to_push= array('media_image_ID'=>$image_related,'media_tags' => array('media_no_link')) ;
                 
                 array_push( $images_related_target , $my_image_to_push );
-                
             }
-            
         }
-        
         /*
         error_log('toto l 317');
         error_log( print_r($images_related_target, TRUE) );
@@ -356,11 +352,6 @@ function add_to_related($target_id, $post_to_add, $base_post_field, $images_rela
             }  
             break;
     }
-    
-    //debug
-    //update_field('boolea',$to_push_array, $post_id );
-
-
     
 }
 

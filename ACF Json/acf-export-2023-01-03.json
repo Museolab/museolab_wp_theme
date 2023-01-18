@@ -1167,7 +1167,7 @@
                     {
                         "key": "field_63b2f58f74554",
                         "label": "Image",
-                        "name": "galerie_image",
+                        "name": "media_image_ID",
                         "aria-label": "",
                         "type": "image",
                         "instructions": "",

@@ -55,76 +55,15 @@ while ( have_posts() ) :
         
         get_template_part( 'template-parts/content/related-elements'); 
 
-        
-        
-        
+        get_template_part( 'template-parts/content/render-related-galerie'); 
 
-        $myposttype = $post->post_type ;
-
-        $slug = get_post_field( 'post_name' );
-
-
-        ///ICI on fait une requete des post liés (à faire uniquement lors de l'édition?)
-        
-        $relatedBlogPostArgs = array(
-        'post_status' => 'publish',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'related_machine',
-                'field' => 'slug',
-                'terms' => $slug,
-                )
-            )
-        );
-        $relatedBlogPosts = new WP_Query($relatedBlogPostArgs);
-        ?>
-
-        
-            <?php
-            if( $relatedBlogPosts->have_posts() ){
-
-                echo('<h2>Ressources liées et fiches techniques</h2><br>');
-
-                // Start looping over the query results.
-                while ( $relatedBlogPosts->have_posts() ) {
-
-                    $relatedBlogPosts->the_post();
-
-            ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class( 'reference_article' ); ?>>
-                <?php get_template_part( 'template-parts/content/miniature-projet'  ); ?>
-
-
-            </article>
-        </div>
-        <?php
-
-        }
-
-
-        } else {
-            echo('Aucuns post liées <br>');
-        }
         
         
 
-       echo ('single-equipments page here');
-
-
         
-		?> -->
+		?>
     </div><!-- .entry-content -->
 
-    <footer class="entry-footer default-max-width">
-        
-<!--Leave a comment?
--->
-        
-    </footer><!-- .entry-footer -->
-
-    <?php if ( ! is_singular( 'attachment' ) ) : ?>
-    <?php get_template_part( 'template-parts/post/author-bio' ); ?>
-    <?php endif; ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->
 

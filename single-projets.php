@@ -66,6 +66,10 @@ endwhile;
 endif; 
         
         get_template_part( 'template-parts/content/related-elements'); 
+        
+        
+        get_template_part( 'template-parts/content/render-related-galerie'); 
+
 
 ?>
 </article>
