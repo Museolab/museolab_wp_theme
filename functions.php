@@ -113,8 +113,8 @@ function theme_support_features() {
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 1568, 9999 );
+		//add_theme_support( 'post-thumbnails' );
+		//set_post_thumbnail_size( 1568, 9999 );
 
 		register_nav_menus(
 			array(
@@ -255,6 +255,11 @@ function theme_support_features() {
 
 		// Add support for experimental cover block spacing.
 		add_theme_support( 'custom-spacing' );
+    
+    
+        
+
+        
 
     
 	}
@@ -330,7 +335,7 @@ function museolab_register_machine_posts() {
         'public' => true,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-hammer',
-        'supports' => ['title', 'thumbnail'],
+        'supports' => ['title'],
         'taxonomies' => ['post_tag'],
         'add_new_item' => __( 'Ajouter un équipement', 'textdomain' ),
         'show_in_rest' => true,
@@ -354,7 +359,7 @@ function museolab_register_projets_posts() {
         'public' => true,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-vault',
-        'supports' => ['title', 'thumbnail','author'],
+        'supports' => ['title','author'],
         'taxonomies' => ['post_tag'],
         'hierarchical' => true,
         'show_in_rest' => true,
@@ -667,12 +672,13 @@ function my_acf_op_init() {
 }
 
 
-function get_one_vignette_url($post_id=false, $size='full'){
+function get_one_vignette_url($post_id=false, $size='large'){
     
 /*
     error_log('get_one_vignette_url');
-    error_log( print_r($post_id, TRUE) );
 */
+
+
     
     if (!$post_id){
         $post_id = false;
@@ -682,6 +688,8 @@ function get_one_vignette_url($post_id=false, $size='full'){
     $vignette_url = array();
 
     if ( have_rows( 'images_associes', $post_id) ):
+    
+    
     
     $can_be_erased = true;
     
@@ -703,6 +711,9 @@ function get_one_vignette_url($post_id=false, $size='full'){
         };
         
         $image_Id = get_sub_field('media_image_ID');
+        
+            error_log( print_r($image_Id, TRUE) );
+
 
         $image_to_display = wp_get_attachment_image_url($image_Id, $size);
 
@@ -714,7 +725,9 @@ function get_one_vignette_url($post_id=false, $size='full'){
     //met quand même la première image sans tag si on a rien dedans
     if (!$vignette_url){
         $image_Id = get_sub_field('media_image_ID');
-        $image_to_display = wp_get_attachment_image_url($image_Id);
+        
+        $image_to_display = wp_get_attachment_image_url($image_Id, $size);
+        
         array_push($vignette_url,$image_to_display);
     };
 
@@ -730,7 +743,8 @@ endif;
             error_log( print_r($vignette_url[0], TRUE) );
 */
 
-        
+            error_log( print_r($vignette_url, TRUE) );
+
         
         return $vignette_url[0];
     } else {

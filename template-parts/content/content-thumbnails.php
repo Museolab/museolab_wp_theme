@@ -1,13 +1,8 @@
 <?php
 /**
  * Template part for displaying post thumbnails and search results
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
  */
+
 
 ?>
 
@@ -16,7 +11,7 @@
 
                     
 
-<article class="m-thumb-container" style="background: url('<?php echo(get_one_vignette_url()); ?>'); background-size: cover;">
+<article class="m-thumb-container" style="background: url('<?php echo(get_one_vignette_url(get_the_ID(),'large')); ?>'); background-size: cover;">
     <a class="overlay" href=" <?php the_permalink() ?>">
         <br>
         <div class="items head">
