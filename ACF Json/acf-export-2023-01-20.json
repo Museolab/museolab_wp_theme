@@ -1,0 +1,2477 @@
+[
+    {
+        "key": "group_62f6369e062f1",
+        "title": "content_category",
+        "fields": [
+            {
+                "key": "field_62f636b0b3e94",
+                "label": "Type de contenu",
+                "name": "content_category",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "De quel type de contenu s'agit-il ?",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "article": "Article",
+                    "veille": "Veille",
+                    "galery": "Galerie d'image",
+                    "tuto": "Tutoriel",
+                    "technical": "Fiche technique"
+                },
+                "allow_custom": 0,
+                "default_value": [
+                    "article"
+                ],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "comments",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": false,
+        "description": "12-22 Les tags\/type de contenus pour les articles",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_62f255a7c2dc1",
+        "title": "content_content",
+        "fields": [
+            {
+                "key": "field_62f255ba940b0",
+                "label": "Liens vers contenu",
+                "name": "content_content",
+                "aria-label": "",
+                "type": "page_link",
+                "instructions": "Fait un lien vers un contenu existant",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "allow_null": 0,
+                "allow_archives": 1,
+                "multiple": 0
+            },
+            {
+                "key": "field_62f255a7d2e50",
+                "label": "Style",
+                "name": "style",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "Choix du style",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "default": "Aucun style disponible"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_62f25647940b1",
+                "label": "Miniature",
+                "name": "miniature",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "Afficher la version réduite au chargement ?",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_category",
+                    "operator": "==",
+                    "value": "category:toto"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Element Contenu du groupe \"Content\"",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_60dc65c6b3022",
+        "title": "content_galery",
+        "fields": [
+            {
+                "key": "field_60dc65f49d8ee",
+                "label": "Galerie",
+                "name": "galerie",
+                "aria-label": "",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "insert": "append",
+                "library": "all",
+                "min": "",
+                "max": "",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_60dc66ce9d8ef",
+                "label": "Galery style",
+                "name": "galery_style",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Carrousel": "Carrousel",
+                    "Grille": "Grille",
+                    "Pleine largeur": "Pleine largeur"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_60dd8c10a3eaf",
+                "label": "Options",
+                "name": "options",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "linked": "Ajouter automatiquement les images aux galeries des projets et machines liées",
+                    "option_2": "Option 2"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "horizontal",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Element galery du groupe \"Content\"",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_60dd905f57676",
+        "title": "content_picture",
+        "fields": [
+            {
+                "key": "field_60dd905f6399d",
+                "label": "Image",
+                "name": "picture",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_60dd905f675fe",
+                "label": "Image style",
+                "name": "picture_style",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "image_medium": "Adaptée au cadre",
+                    "image_miniature": "Miniature",
+                    "image_banner": "Bandeau pleine largeur"
+                },
+                "default_value": false,
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_60dd905f6b2bc",
+                "label": "Options",
+                "name": "options",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "linked": "Ajouter automatiquement l'image aux galeries des projets et machines liées",
+                    "option_2": "Option 2"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "horizontal",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Contents => Image seule",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_60db0d8f347b2",
+        "title": "content_text",
+        "fields": [
+            {
+                "key": "field_60db0d98e1175",
+                "label": "Editeur de texte",
+                "name": "text",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_60db0e07e1176",
+                "label": "Style",
+                "name": "style",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "Choix du style",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "default_text_content": "Aucun style disponible"
+                },
+                "default_value": "default_text_content",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_category",
+                    "operator": "==",
+                    "value": "category:non-classe"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Element texte du groupe \"Content\"",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_60dc68e4273f8",
+        "title": "contents_all",
+        "fields": [
+            {
+                "key": "field_60dc690456797",
+                "label": "Contenus",
+                "name": "contents",
+                "aria-label": "",
+                "type": "flexible_content",
+                "instructions": "Les différents contenus de votre article, ajoutez et agencez les comme vous souhaitez, certains éléments sont utilisables qu'une seule fois.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "layouts": {
+                    "layout_60dc696c46a79": {
+                        "key": "layout_60dc696c46a79",
+                        "name": "texte",
+                        "label": "Texte",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_60dc69d456798",
+                                "label": "Texte",
+                                "name": "bloc_texte",
+                                "aria-label": "",
+                                "type": "clone",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "clone": [
+                                    "group_60db0d8f347b2"
+                                ],
+                                "display": "seamless",
+                                "layout": "block",
+                                "prefix_label": 0,
+                                "prefix_name": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_62f256ed5fb22": {
+                        "key": "layout_62f256ed5fb22",
+                        "name": "contenu_lie",
+                        "label": "Contenu lié",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_62f257045fb23",
+                                "label": "Contenu",
+                                "name": "contenu_contenu",
+                                "aria-label": "",
+                                "type": "clone",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "user_roles": [
+                                    "all"
+                                ],
+                                "clone": [
+                                    "group_62f255a7c2dc1"
+                                ],
+                                "display": "seamless",
+                                "layout": "block",
+                                "prefix_label": 0,
+                                "prefix_name": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_60dc6a1256799": {
+                        "key": "layout_60dc6a1256799",
+                        "name": "galerie",
+                        "label": "Galerie",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_60dc6a255679a",
+                                "label": "Galerie",
+                                "name": "galerie",
+                                "aria-label": "",
+                                "type": "clone",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "clone": [
+                                    "group_60dc65c6b3022"
+                                ],
+                                "display": "seamless",
+                                "layout": "block",
+                                "prefix_label": 0,
+                                "prefix_name": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_60dd91a1d48dc": {
+                        "key": "layout_60dd91a1d48dc",
+                        "name": "picture",
+                        "label": "Image",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_60dd91a1d48dd",
+                                "label": "Image",
+                                "name": "picture",
+                                "aria-label": "",
+                                "type": "clone",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "clone": [
+                                    "group_60dd905f57676"
+                                ],
+                                "display": "seamless",
+                                "layout": "block",
+                                "prefix_label": 0,
+                                "prefix_name": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    }
+                },
+                "button_label": "Ajouter un élément",
+                "min": "",
+                "max": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Les différents contenus affichables en articles",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_63ad81ec6be55",
+        "title": "custom_tags",
+        "fields": [
+            {
+                "key": "field_63ad81ec72c00",
+                "label": "Autres tags",
+                "name": "custom_tags",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "mon-etiquette": "mon-etiquette",
+                    "Grise": "Grise"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 1,
+                "save_custom": 1,
+                "layout": "horizontal",
+                "toggle": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Liste les étiquettes personnalisés",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_61d4210c893cd",
+        "title": "debug tool",
+        "fields": [
+            {
+                "key": "field_61d42119ad437",
+                "label": "boolea",
+                "name": "boolea",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "abc",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_61ddbc2698e8e",
+                "label": "test02",
+                "name": "test02",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "projets"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "sert a vérifier certaines variable lors des tests",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_638df0c4b3b80",
+        "title": "Équipements_Infos_Administrative",
+        "fields": [
+            {
+                "key": "field_638df0c490c4f",
+                "label": "Prix d'achat",
+                "name": "prix_achat",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "Prix d'achat de l'équipement - HT",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator"
+                ],
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "placeholder": "",
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_638df16d90c50",
+                "label": "Date d'achat",
+                "name": "date_achat",
+                "aria-label": "",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator"
+                ],
+                "display_format": "m\/Y",
+                "return_format": "m\/Y",
+                "first_day": 1
+            },
+            {
+                "key": "field_638df1b090c51",
+                "label": "Financeur",
+                "name": "financeur",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "Quel structure à financer cet équipement",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator"
+                ],
+                "choices": {
+                    "mauve": "MAUVE",
+                    "univ": "Université d'Artois",
+                    "llv": "Louvre Lens Vallée",
+                    "autre": "Autre"
+                },
+                "default_value": false,
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_638df22390c52",
+                "label": "Propriétaire",
+                "name": "proprietaire",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator"
+                ],
+                "choices": {
+                    "univ": "Université d'Artois",
+                    "llv": "Louvre Lens Vallée",
+                    "adm": "Art de Muser",
+                    "leo": "Léo",
+                    "autre": "Autre"
+                },
+                "default_value": false,
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_638df29d90c53",
+                "label": "Documents administratifs",
+                "name": "documents_administratifs",
+                "aria-label": "",
+                "type": "file",
+                "instructions": "Les pièces administratives et comptables associées à l'équipement : BDC \/ BDL",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator"
+                ],
+                "return_format": "array",
+                "library": "all",
+                "min_size": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_638df31290c54",
+                "label": "Nombre d'unités",
+                "name": "nombre_unites",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator"
+                ],
+                "default_value": 1,
+                "min": 0,
+                "max": 99,
+                "placeholder": "",
+                "step": 1,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_638df3bc90c56",
+                "label": "Inventaire",
+                "name": "inventaire",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_638df31290c54",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "layout": "table",
+                "sub_fields": [
+                    {
+                        "key": "field_638df4db90c57",
+                        "label": "Numéro d'inventaire",
+                        "name": "numero_inventaire",
+                        "aria-label": "",
+                        "type": "number",
+                        "instructions": "Inventaire Artois ou numéro propre",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "min": "",
+                        "max": "",
+                        "placeholder": "",
+                        "step": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_638df57990c58",
+                        "label": "Numéro de Serie",
+                        "name": "numero_de_serie",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_638df58d90c59",
+                        "label": "Logistique",
+                        "name": "logistique",
+                        "aria-label": "",
+                        "type": "checkbox",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "deplacable": "Déplaçable",
+                            "empruntable": "Empruntable"
+                        },
+                        "default_value": [],
+                        "return_format": "value",
+                        "allow_custom": 0,
+                        "layout": "vertical",
+                        "toggle": 0,
+                        "save_custom": 0
+                    },
+                    {
+                        "key": "field_638df69690c5a",
+                        "label": "Lieu de stockage",
+                        "name": "lieu_stockage",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_638df6f190c5b",
+                        "label": "Signe distinctif",
+                        "name": "signe_distinctif",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Si plusieurs, comment le différencier",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_638df73490c5c",
+                "label": "InventaireS",
+                "name": "inventaires",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Ajoutez une ligne pour chaque copie de l'équipement",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_638df31290c54",
+                            "operator": ">",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "administrator"
+                ],
+                "layout": "table",
+                "pagination": 0,
+                "min": 2,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Ajouter un élément",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_638df9a290c5d",
+                        "label": "Inventaire_multiple",
+                        "name": "inventaire_multiple",
+                        "aria-label": "",
+                        "type": "clone",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "clone": [
+                            "field_638df4db90c57",
+                            "field_638df57990c58",
+                            "field_638df58d90c59",
+                            "field_638df69690c5a",
+                            "field_638df6f190c5b"
+                        ],
+                        "display": "seamless",
+                        "layout": "block",
+                        "prefix_label": 0,
+                        "prefix_name": 0,
+                        "parent_repeater": "field_638df73490c5c"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "12_22 Ok : Groupe d'infos administratives pour les équipements_ Clone dans \"Equipements\"",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_63b2edf6b82ce",
+        "title": "Images associées",
+        "fields": [
+            {
+                "key": "field_63b2f58874553",
+                "label": "Images associés",
+                "name": "images_associes",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Les images liées avec ce contenu - La première sera automatiquement utilisée en vignette (sans si autres sélectionnée)",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "layout": "table",
+                "pagination": 0,
+                "min": 1,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Ajouter une image",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_63b2f58f74554",
+                        "label": "Image",
+                        "name": "media_image_ID",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_63b2f59574555",
+                                    "operator": "!=",
+                                    "value": "media_none"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "",
+                        "preview_size": "medium",
+                        "parent_repeater": "field_63b2f58874553"
+                    },
+                    {
+                        "key": "field_63b2f59574555",
+                        "label": "Media_tags",
+                        "name": "media_tags",
+                        "aria-label": "",
+                        "type": "checkbox",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "media_vignette": "Mis en avant - Vignette",
+                            "media_featured": "Mis en avant dans la galerie page d'accueil",
+                            "media_no_link": "Ne pas lier cette image aux éléments associés",
+                            "media_hidden": "Ne pas afficher sur ce post\/projet\/machine (mais garder le lien)",
+                            "media_none": "Ne pas utiliser d'images"
+                        },
+                        "default_value": [],
+                        "return_format": "value",
+                        "allow_custom": 0,
+                        "layout": "vertical",
+                        "toggle": 0,
+                        "save_custom": 0,
+                        "parent_repeater": "field_63b2f58874553"
+                    }
+                ]
+            },
+            {
+                "key": "field_63b557361542f",
+                "label": "images_associes_backup",
+                "name": "images_associes_backup",
+                "aria-label": "",
+                "type": "post_object",
+                "instructions": "Sert à comparer les tableaux et enlever les références aux images absentes",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "hidden-acf",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "attachment"
+                ],
+                "taxonomy": "",
+                "return_format": "id",
+                "multiple": 1,
+                "allow_null": 1,
+                "ui": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "Utiliser pour associer des images",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_603fb0259a1ae",
+        "title": "Liens",
+        "fields": [
+            {
+                "key": "field_60d5edbf80b73",
+                "label": "Elements liés",
+                "name": "elements_linked",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "Sélectionnez les éléments associés à cette publication - Certains éléments ont pu avoir été insérés de façon automatique.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "machines_linked": "Machines et équipements",
+                    "projets_linked": "Projets",
+                    "articles_linked": "Articles"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "horizontal",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            },
+            {
+                "key": "field_603fb0a50d392",
+                "label": "Les machines",
+                "name": "les_machines",
+                "aria-label": "",
+                "type": "post_object",
+                "instructions": "Les équipements en lien avec la publication - Plusieurs choix possibles",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_60d5edbf80b73",
+                            "operator": "==",
+                            "value": "machines_linked"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "equipements"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_61dc0422cdcd0",
+                "label": "Les machines (copie)",
+                "name": "les_machines_copie",
+                "aria-label": "",
+                "type": "post_object",
+                "instructions": "Crée et stock une copie de la valeurs.\r\nPermet de détecter et mettre à jour les éléments supprimés.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "hidden-acf",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "equipements"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_60d5ed0975d83",
+                "label": "Les projets",
+                "name": "les_projets",
+                "aria-label": "",
+                "type": "post_object",
+                "instructions": "Les projets en lien avec la publication - Plusieurs choix possibles",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_60d5edbf80b73",
+                            "operator": "==",
+                            "value": "projets_linked"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "projets"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_61dc044bcdcd1",
+                "label": "Les projets (copie)",
+                "name": "les_projets_copie",
+                "aria-label": "",
+                "type": "post_object",
+                "instructions": "Crée et stock une copie de la valeurs.\r\nPermet de détecter et mettre à jour les éléments supprimés.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "hidden-acf",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "projets"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_60d5ee6fd6095",
+                "label": "Les articles",
+                "name": "les_articles",
+                "aria-label": "",
+                "type": "post_object",
+                "instructions": "Les articles en lien avec la publication - Plusieurs choix possibles",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_60d5edbf80b73",
+                            "operator": "==",
+                            "value": "articles_linked"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            },
+            {
+                "key": "field_61dc0450cdcd2",
+                "label": "Les articles (copie)",
+                "name": "les_articles_copie",
+                "aria-label": "",
+                "type": "post_object",
+                "instructions": "Crée et stock une copie de la valeurs.\r\nPermet de détecter et mettre à jour les éléments supprimés.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "hidden-acf",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "12-22_ IMPORTANT : Gère les liens entre les différents types de posts ?",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_6384dca8eb019",
+        "title": "Machines et Équipements Content",
+        "fields": [
+            {
+                "key": "field_63888c7b410a3",
+                "label": "commentaire_titre",
+                "name": "",
+                "aria-label": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "message": "Le titre de l'équipement correspond à ce qui sera affiché, mis en avant.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_63887d0e5928b",
+                "label": "Type d'équipement",
+                "name": "type_equipement",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "machine": "Machine",
+                    "outil": "Outil",
+                    "accessoire": "Accessoire",
+                    "logiciel": "Logiciel \/ Licence",
+                    "consommable": "Consommable"
+                },
+                "default_value": [],
+                "return_format": "",
+                "allow_custom": 0,
+                "layout": "",
+                "toggle": 0,
+                "save_custom": 0
+            },
+            {
+                "key": "field_6384dd077e3ea",
+                "label": "Modèle de l'équipement",
+                "name": "modele_equipement",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Marque et modèle de l'équipement",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6384dd737e3eb",
+                "label": "Description de l'équipement",
+                "name": "post_excerpt",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "L'équipement en quelques lignes - texte mis en avant",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "",
+                "maxlength": "",
+                "rows": 4,
+                "placeholder": "Cet équipement fait ça de cette manière",
+                "new_lines": ""
+            },
+            {
+                "key": "field_638886d85928c",
+                "label": "Caractéristiques principales",
+                "name": "caracteristiques_principales",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Ajouter un élément",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_638886fd5928d",
+                        "label": "Libéllé",
+                        "name": "libelle",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Nom de la caractéristique ( format \/ type de fichiers \/ couleur .... )",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_638886d85928c"
+                    },
+                    {
+                        "key": "field_638887095928e",
+                        "label": "valeur",
+                        "name": "valeur",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Les caractéristiques ( 1000x600mm \/ .ai \/ rouge .... )",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_638886d85928c"
+                    }
+                ]
+            },
+            {
+                "key": "field_63ac63f5a8655",
+                "label": "Contenu",
+                "name": "contenu",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_60dc68e4273f8"
+                ],
+                "display": "seamless",
+                "layout": "",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_638e145826ee8",
+                "label": "Liens",
+                "name": "liens",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_603fb0259a1ae"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_63ad85856672d",
+                "label": "Tags",
+                "name": "tags_group",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_63ad81ec6be55"
+                ],
+                "display": "seamless",
+                "layout": "",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_63ac5662eeb06",
+                "label": "Visibilité",
+                "name": "visibilite_group",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_62fb636f81f8b"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_6384e14c7e3ed",
+                "label": "Fiche d'utilisation machine",
+                "name": "fiche_utilisation",
+                "aria-label": "",
+                "type": "post_object",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "post_type": [
+                    "post"
+                ],
+                "taxonomy": [
+                    "ressource_type:tuto"
+                ],
+                "return_format": "object",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 1
+            },
+            {
+                "key": "field_6384ddea7e3ec",
+                "label": "Notices et manuels officiels",
+                "name": "notices_et_manuels",
+                "aria-label": "",
+                "type": "file",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "return_format": "array",
+                "library": "all",
+                "min_size": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_63888aaa80338",
+                "label": "Fiche d'inventaire",
+                "name": "fiche_inventaire",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_638df0c4b3b80"
+                ],
+                "display": "group",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_63b3f65950c10",
+                "label": "Galerie Equipement",
+                "name": "galerie_equipement",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_63b2edf6b82ce"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "equipements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_60db05465dbcd",
+        "title": "Post Content",
+        "fields": [
+            {
+                "key": "field_60db057da393c",
+                "label": "Résumé court",
+                "name": "post_excerpt",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Décrire le contenu en quelques mots",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": 3,
+                "new_lines": ""
+            },
+            {
+                "key": "field_60db05a6a393d",
+                "label": "Content",
+                "name": "content",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "Ajoutez ici les différents éléments que vous souhaitez insérer à votre article.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_60dc68e4273f8"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_62fb65cbcd6d1",
+                "label": "Type de contenu",
+                "name": "type_de_contenu",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_62f6369e062f1"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_63ad675f16adf",
+                "label": "visibilite_group",
+                "name": "visibilite_group",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_62fb636f81f8b"
+                ],
+                "display": "seamless",
+                "layout": "",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_60dc30459a5b9",
+                "label": "Liens",
+                "name": "liens",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "clone": [
+                    "group_603fb0259a1ae"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_63b3f5a36e11c",
+                "label": "Galerie post",
+                "name": "galerie_post",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_63b2edf6b82ce"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_62fb68177716c",
+        "title": "Project Content",
+        "fields": [
+            {
+                "key": "field_62fb681784272",
+                "label": "Résumé court",
+                "name": "post_excerpt",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Décrire le contenu en quelques mots",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": 3,
+                "new_lines": ""
+            },
+            {
+                "key": "field_62fb681787f0e",
+                "label": "Content",
+                "name": "content",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "Ajoutez ici les différents éléments que vous souhaitez insérer à votre article.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_60dc68e4273f8"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_63512178360a2",
+                "label": "Dates du projet",
+                "name": "dates_du_projet",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6351213f360a1",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "layout": "table",
+                "sub_fields": [
+                    {
+                        "key": "field_6351218d360a3",
+                        "label": "date debut",
+                        "name": "date_debut",
+                        "aria-label": "",
+                        "type": "date_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "user_roles": [
+                            "all"
+                        ],
+                        "display_format": "d\/m\/Y",
+                        "return_format": "d\/m\/Y",
+                        "first_day": 1
+                    },
+                    {
+                        "key": "field_635121da3f185",
+                        "label": "projet terminé",
+                        "name": "projet_termine",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 0,
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": ""
+                    },
+                    {
+                        "key": "field_6351219c360a4",
+                        "label": "date fin",
+                        "name": "date_fin",
+                        "aria-label": "",
+                        "type": "date_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_635121da3f185",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "display_format": "d\/m\/Y",
+                        "return_format": "d\/m\/Y",
+                        "first_day": 1
+                    }
+                ]
+            },
+            {
+                "key": "field_62fb68178bbd2",
+                "label": "Liens",
+                "name": "liens",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "clone": [
+                    "group_603fb0259a1ae"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_63b30335ee2aa",
+                "label": "Galerie projet",
+                "name": "galerie_projet",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_63b2edf6b82ce"
+                ],
+                "display": "seamless",
+                "layout": "",
+                "prefix_label": 0,
+                "prefix_name": 0
+            },
+            {
+                "key": "field_6351213f360a1",
+                "label": "Dater le projet ?",
+                "name": "is_date",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "Afficher une date de début (et éventuellement de fin) pour le projet",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "projets"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "page_attributes",
+            "featured_image",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": true,
+        "description": "12-22_ok_   Contenu de la page Projet",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_63b2b8ca44974",
+        "title": "Tags d'images",
+        "fields": [
+            {
+                "key": "field_63b2d80236d1b",
+                "label": "Tags Media",
+                "name": "tags_media",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "front_galery": "Utilisée pour la galerie collective",
+                    "header": "Featured - Utilisée en site header"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 1,
+                "save_custom": 0,
+                "layout": "horizontal",
+                "toggle": 0
+            },
+            {
+                "key": "field_63b2da378bef1",
+                "label": "Contenus liés",
+                "name": "contenus_lies_media",
+                "aria-label": "",
+                "type": "clone",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "clone": [
+                    "group_603fb0259a1ae"
+                ],
+                "display": "seamless",
+                "layout": "block",
+                "prefix_label": 0,
+                "prefix_name": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "attachment",
+                    "operator": "==",
+                    "value": "image"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_62fb636f81f8b",
+        "title": "Visibilité du Post",
+        "fields": [
+            {
+                "key": "field_62fb637ae823d",
+                "label": "Visibilité",
+                "name": "visibilite",
+                "aria-label": "",
+                "type": "radio",
+                "instructions": "La visibilité du post",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "choices": {
+                    "public": "Public",
+                    "important": "Public - Mis en avant (A faire)",
+                    "hidden": "Caché - N'apparait pas dans les recherches",
+                    "private": "Privé - Administrateurs uniquement",
+                    "password": "Accessible avec un mot de passe"
+                },
+                "default_value": "public",
+                "return_format": "value",
+                "allow_null": 0,
+                "other_choice": 0,
+                "layout": "horizontal",
+                "save_other_choice": 0
+            },
+            {
+                "key": "field_62fb647be823e",
+                "label": "Mot de passe",
+                "name": "mot_de_passe",
+                "aria-label": "",
+                "type": "password",
+                "instructions": "Protection par mot de passe",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_62fb637ae823d",
+                            "operator": "==",
+                            "value": "password"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "user_roles": [
+                    "all"
+                ],
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": false,
+        "description": "",
+        "show_in_rest": 0
+    }
+]

@@ -712,7 +712,9 @@ function get_one_vignette_url($post_id=false, $size='large'){
         
         $image_Id = get_sub_field('media_image_ID');
         
+/*
             error_log( print_r($image_Id, TRUE) );
+*/
 
 
         $image_to_display = wp_get_attachment_image_url($image_Id, $size);
@@ -741,10 +743,10 @@ endif;
         
 /*
             error_log( print_r($vignette_url[0], TRUE) );
-*/
+
 
             error_log( print_r($vignette_url, TRUE) );
-
+*/
         
         return $vignette_url[0];
     } else {

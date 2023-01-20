@@ -4,6 +4,36 @@
 
 get_header('', array('page'=>'test'));
 
+
+        $image_to_display;
+        
+            $args = array(
+                'post_type' => 'attachment',
+                'post_mime_type' => 'image',
+                'orderby' => 'rand',
+                'order' => 'desc',
+                'posts_per_page' => 1,
+                'post_status'    => 'inherit',
+                'perm'        => 'readable',
+                'meta_query' => array(
+                        array(
+                            'key'     => 'tags_media',
+                            'value'   => '"front_galery"',
+                            'compare' => 'LIKE'
+                        )
+                    )
+                );
+        
+        $images = new WP_Query( $args );
+
+
+        if ( $images->have_posts() ) : $images->the_post();
+
+        $image_to_display = wp_get_attachment_image_url(get_the_ID());
+
+        endif;
+           
+
 ?>
 
 <div class="page-blocs-container">
@@ -13,7 +43,7 @@ get_header('', array('page'=>'test'));
 
 
 
-        <div class="background-image-landing">
+        <div class="background-image-landing" style="background-image: url(<?php echo( $image_to_display) ?>)">
         </div>
 
         <div class="bloc">

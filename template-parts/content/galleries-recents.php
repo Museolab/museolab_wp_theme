@@ -1,4 +1,3 @@
-
 <?php
 
 ?>
@@ -41,12 +40,20 @@ DISPLAY NEWEST PICTURES ON THE HOME PAGE
 ?>
 
 
-        <!-- Display a gallery with newest images -->
-    <div class="bloc-recents">
-        <h2 class=titre-recent>Dernières Images</h2>
-        <div class="bloc-recents gallerie">
+<!-- Display a gallery with newest images -->
+<div class="bloc-recents">
+    <h2 class=titre-recent>Dernières Images</h2>
+    <div class="bloc-recents gallerie">
 
-            <?php
+        <?php
+            
+            
+            
+            
+            /*Meta Query -  Image mise en avant */
+            
+        
+        
             
             
             $args = array(
@@ -57,19 +64,50 @@ DISPLAY NEWEST PICTURES ON THE HOME PAGE
                 'posts_per_page' => $nombreDImages,
                 'post_status'    => 'inherit',
                 'perm'        => 'readable',
+                'meta_query' => array(
+                        array(
+                            'key'     => 'tags_media',
+                            'value'   => '"front_galery"',
+                            'compare' => 'LIKE'
+                        )
+                    )
                 );
         
             $loop = new WP_Query( $args );
+            
+            
         
         while ( $loop->have_posts() ) : $loop->the_post();
+            
+            
+        $image_Id = get_sub_field('media_image_ID');
+        
+        $image_to_display = wp_get_attachment_image($image_Id,'thumbnail');
+
+        $image_url = get_permalink($image_Id);
+        
+        ?>
+
+
+        <a href='<?php echo($image_url) ?>'>
+
+            <?php
+    
+        echo($image_to_display);
+
+        echo('</a>');
+            
+        /*    
         
         $image = wp_get_attachment_image_src( get_the_ID() ); 
-        echo "<img src='" . $image[0] . "'>";
+            
+        echo "<img src='" . $image[0] . "'>";*/
         
+            
         endwhile;
 
         ?>
-        </div>
     </div>
+</div>
 
 <?php
