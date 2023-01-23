@@ -24,7 +24,7 @@ DISPLAY NEWEST PICTURES ON THE HOME PAGE
 
         if (is_string ($args['order'])){
             
-            if ($args['order'] =='random' ){
+            if ($args['order'] =='rand' ){
             $imagesRandom = 'rand';}
             else if ($args['order'] =='date' ){
             $imagesRandom = 'date';

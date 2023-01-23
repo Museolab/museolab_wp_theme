@@ -122,7 +122,7 @@
 
 /* contains newest projects & title*/
 .bloc-recents {
-    background-color: gray;
+    background-color: rgb(255,88,93);
     max-width: none !important;
     width: 100%;
 
@@ -171,7 +171,8 @@ button {
 
 /* display block newest article miniatures & title*/
 .bloc-article-recent {
-    background-color: darkslategray;
+    background-color: rgb(0,61,165);
+    
     
 }
 

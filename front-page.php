@@ -75,7 +75,7 @@ get_header('', array('page'=>'test'));
         get_template_part( 'template-parts/content/articles-recents', '', array('number'=>6));
         
 //args : number(int) - order ( 'date' 'random')
-        get_template_part( 'template-parts/content/galleries-recents', '', array('number'=>6,'order'=>'date'));
+        get_template_part( 'template-parts/content/galleries-recents', '', array('number'=>6,'order'=>'rand'));
                  
         ?>
         
