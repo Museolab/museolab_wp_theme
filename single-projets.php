@@ -6,6 +6,8 @@
  */
 
 //the website header
+    $mainColor = false;
+
 get_header();
 
 /* Start the Loop */
@@ -15,6 +17,7 @@ while ( have_posts() ) :
     
     //permet d'alterner les styles des différents éléments
     $contenu_pair = 0;
+    
 
 ?>
 
@@ -28,47 +31,30 @@ while ( have_posts() ) :
 
     get_template_part('template-parts/content/single-header');
     
-    get_template_part('template-parts/content/content-resume');
+    get_template_part('template-parts/content/content-resume', '', array('mainBgColor'=>$mainColor)); 
+    
+    $mainColor = !$mainColor;
 
             
 
 
 
-if ( have_rows( 'contents' ) ): 
-	 while ( have_rows( 'contents' ) ) : the_row(); 
-
-
-            ?>
-    <div class="content-single-container
-                <?php echo is_int($contenu_pair/2) ? 'content-single-primary' : 'content-single-secondary' ;
-                ++$contenu_pair;  ?> ">
-        <?php
-
-		 if ( get_row_layout() == 'texte' ) : 
-				get_template_part( 'template-parts/content-module/texte' );
-
-		 elseif ( get_row_layout() == 'galerie' ) : 
-				get_template_part( 'template-parts/content-module/galerie' );
-
-		 elseif ( get_row_layout() == 'picture' ) : 
-				get_template_part( 'template-parts/content-module/image' );
-        else :
-            echo("bloc non créé");
-
-
+    get_template_part( 'template-parts/content/render-contents', '', array('mainBgColor'=>$mainColor)); 
     
-	 endif;
+    $count = count(get_field('contents'));
+    if (!is_int($count/2)){ $mainColor = !$mainColor; }
+    
         
-          echo ' </div>' ;
-endwhile;
- else: 
+        
+        
+        get_template_part( 'template-parts/content/render-related-galerie', '', array('mainBgColor'=>$mainColor)); 
+        
+        $mainColor = !$mainColor;
+        
+        get_template_part( 'template-parts/content/related-elements', '', array('mainBgColor'=>$mainColor)); 
+        
+        $mainColor = !$mainColor;
 
-endif; 
-        
-        get_template_part( 'template-parts/content/related-elements'); 
-        
-        
-        get_template_part( 'template-parts/content/render-related-galerie'); 
 
 
 ?>

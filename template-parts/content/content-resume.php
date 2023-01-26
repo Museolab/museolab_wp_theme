@@ -4,11 +4,16 @@
 <!-- When the content number is pair the color will change -->
 
 
+<?php if (!isset($args['mainBgColor'])){
+    $mainBgColor = true;
+}else{
+    $mainBgColor = $args['mainBgColor'];
+}
+?>
+
 <div class="projet-desctiption content-single-container 
-                <?php 
-                $contenu_pair = 0;
-                echo is_int($contenu_pair/2) ? 'content-single-primary' : 'content-single-secondary' ;
-                ++$contenu_pair;  ?> ">
+<?php echo ($mainBgColor) ? 'primary-bg-color' : 'secondary-bg-color' ; ?>
+            ">
     <h3 class="emphase"> <?php the_field('post_excerpt'); ?> </h3>
 </div>
 

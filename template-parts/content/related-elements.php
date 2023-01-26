@@ -2,6 +2,16 @@
 
 
 <?php
+
+
+if (!isset($args['mainBgColor'])){
+    $mainBgColor = true;
+}else{
+    $mainBgColor = $args['mainBgColor'];
+}
+          
+
+
     $post = get_post();
 
     $myposttype = $post->post_type ;
@@ -31,7 +41,7 @@
 
 ?>
 
-<div class="content-single-container related-elements">
+<div class="content-single-container related-elements <?php echo ($mainBgColor) ? 'primary-bg-color' : 'secondary-bg-color' ; ?> ">
 
     <h3> Elements Liés </h3>
 

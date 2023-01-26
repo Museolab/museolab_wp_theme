@@ -18,7 +18,7 @@ get_header('', array('page'=>'test'));
                 'meta_query' => array(
                         array(
                             'key'     => 'tags_media',
-                            'value'   => '"front_galery"',
+                            'value'   => '"header"',
                             'compare' => 'LIKE'
                         )
                     )
@@ -29,7 +29,7 @@ get_header('', array('page'=>'test'));
 
         if ( $images->have_posts() ) : $images->the_post();
 
-        $image_to_display = wp_get_attachment_image_url(get_the_ID());
+        $image_to_display = wp_get_attachment_image_url(get_the_ID(), $size = 'full',);
 
         endif;
            
@@ -59,11 +59,7 @@ get_header('', array('page'=>'test'));
         
         <a class="" href="https://louvrelensvallee.com/" target="_blank" title="Louvre Lens Vallée"><img class="small-logo" src="<?php echo( get_stylesheet_directory_uri()) ?>/images/LogoLLVCarreBleu.png"></a>
     </div>
-    <div id="bottom" class="infoTxt"><a target="_blank" href="mailto:museolab@univ-artois.fr">Nous contacter</a> | Random background image : <a target="_blank" href="https://unsplash.com">Unsplash</a>
-
-
-
-    </div>
+ <div id="bottom" class="infoTxt"><a target="_blank" href="mailto:museolab@univ-artois.fr">Nous contacter</a>    </div>
 
     <div class="bloc-contenu">
 

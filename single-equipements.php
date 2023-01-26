@@ -2,6 +2,8 @@
 
 <?php
 
+    $mainColor = false;
+
 /**
  * The template for displaying all single equipment page
  */
@@ -11,6 +13,10 @@ get_header();
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post();
+
+
+
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -19,9 +25,11 @@ while ( have_posts() ) :
 
         <?php
         
-        get_template_part('template-parts/content/single-header');
+    get_template_part('template-parts/content/single-header');
     
-        get_template_part('template-parts/content/content-resume');
+    get_template_part('template-parts/content/content-resume', '', array('mainBgColor'=>$mainColor)); 
+    
+    $mainColor = !$mainColor;
         
  ?>
 
@@ -30,32 +38,26 @@ while ( have_posts() ) :
     <div class="entry-content">
         <?php        
         
-        the_field('description'); //Renvoi le contenu du bloc description
+      //  the_field('description'); //Renvoi le contenu du bloc description
         
-        echo('<br>');
         
-        $financeur = get_field('financeur');
-
         
-        if ( $financeur == "mauve" ){
-            echo('Le financeur de ce projet est MAUVE');
-            
-        }else if( $financeur == "non-defini" || $financeur == NULL){
-            
-            echo('Financeur non spécifié');
-            echo('<br>');
-
-        } else {
-
-            echo($financeur);
-            echo('<br>');
-        }
-
-
+        get_template_part( 'template-parts/equipements/render-financeur', '', array('mainBgColor'=>$mainColor)); 
         
-        get_template_part( 'template-parts/content/related-elements'); 
+        $mainColor = !$mainColor;
+        
+        
+        
+       
 
-        get_template_part( 'template-parts/content/render-related-galerie'); 
+
+        get_template_part( 'template-parts/content/render-related-galerie', '', array('mainBgColor'=>$mainColor)); 
+        
+        $mainColor = !$mainColor;
+        
+        get_template_part( 'template-parts/content/related-elements', '', array('mainBgColor'=>$mainColor)); 
+        
+        $mainColor = !$mainColor;
 
         
         

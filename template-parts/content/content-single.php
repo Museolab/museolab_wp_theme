@@ -2,6 +2,9 @@
 DEBUT content-single.php page here
 DISPLAY ARTICLE CONTENT
 -->
+<?php 
+    $mainColor = false;
+?>
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -12,42 +15,24 @@ DISPLAY ARTICLE CONTENT
     get_template_part('template-parts/content/single-header');
      
 
-    get_template_part('template-parts/content/content-resume');
+    get_template_part('template-parts/content/content-resume', '', array('mainBgColor'=>$mainColor)); 
     
-?>
+    $mainColor = !$mainColor;
 
-
-
-    <div class="content-single-container">
-
-
-        <div class="contents-bloc">
-            <?php
-        
         get_template_part( 'template-parts/content/render-contents'); 
-        ?>
-
-        </div>
-
-
-
-    </div>
-
-<!-- 
-================= AFICHER LE CONTENU CLASSIQUE ( PLUS UTILISEE) ===================
-<div class="content-single-container content-old">
-                ancien contenu à dupliquer sur la nouvelle forme
-                <?php /*the_content();*/ ?>
-    </div>
--->
-
     
+    //Si le nombre de contenu est impair on change la couleur
+        $count = count(get_field('contents'));
+            if (!is_int($count/2)){ $mainColor = !$mainColor; }
 
-    <?php
+      
+        get_template_part( 'template-parts/content/render-related-galerie', '', array('mainBgColor'=>$mainColor)); 
         
-        get_template_part( 'template-parts/content/related-elements');   
-    
-        get_template_part( 'template-parts/content/render-related-galerie'); 
+        $mainColor = !$mainColor;
+        
+        get_template_part( 'template-parts/content/related-elements', '', array('mainBgColor'=>$mainColor)); 
+        
+        $mainColor = !$mainColor;
 
         
         

@@ -3,10 +3,22 @@
 
 <?php 
 
-if ( have_rows( 'images_associes' ) ): 
+
+if (!isset($args['mainBgColor'])){
+    $mainBgColor = true;
+}else{
+    $mainBgColor = $args['mainBgColor'];
+}
+            
+
+if ( have_rows( 'images_associes' ) ):
+
+
 ?>
 
-<div class="content-single-container related-images">
+
+
+<div class="content-single-container related-images <?php echo ($mainBgColor) ? 'primary-bg-color' : 'secondary-bg-color' ; ?>  ">
         
         
     <h3> Images Associées </h3>

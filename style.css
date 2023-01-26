@@ -16,17 +16,28 @@ Version: 0.1.1
 /* variables */
 :root {
 
-    --museolab-dark-primary: #282D33;
-    --museolab-dark-secondary: #AA393D;
+    
+    
+
+    
+    --museolab-dark-primary: rgb(255,88,93);
+    --museolab-dark-secondary: rgb(0,61,165);
+    
     --museolab-contrast-main: #EFD13D;
     --museolab-light-primary: #D4D9DC;
-    --museolab-light-secondary: var(--third-content-background);;
+    --museolab-light-secondary: var(--third-content-background);
 
 
 
     --main-white-color: var(--museolab-light-primary);
     --main-purple-color: #9e89b8;
+    
+    
+    
+    --main-content-color: rgb(208,220,239);
+/*
     --main-content-color: darkslategray;
+*/
 
     --main-background-color: #9e89b8;
 
@@ -280,6 +291,17 @@ article {
   display: block;
   margin: auto;
 }
+
+
+.primary-bg-color{
+    background-color: var(--museolab-dark-primary) !important;
+}
+
+.secondary-bg-color{
+    background-color: var(--museolab-dark-secondary) !important;
+}
+
+
 
 @media (max-width:850px) {
     /* p,
