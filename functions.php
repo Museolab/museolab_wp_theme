@@ -671,6 +671,28 @@ function my_acf_op_init() {
     }
 }
 
+function add_acf_column( $columns ) {
+  $columns['licence_field'] = __( 'Licence', 'text_domain' );
+  return $columns;
+}
+add_filter( 'manage_media_columns', 'add_acf_column' );
+
+function show_acf_column_data( $column, $post_id ) {
+  if ( $column === 'licence_field' ) {
+      
+      
+    $value = get_field( 'licence_choice', $post_id );
+      
+      
+    echo $value;
+  }
+}
+add_action( 'manage_media_custom_column', 'show_acf_column_data', 10, 2 );
+
+
+
+
+
 
 function get_one_vignette_url($post_id=false, $size='large'){
     
