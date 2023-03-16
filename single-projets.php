@@ -41,7 +41,13 @@ while ( have_posts() ) :
 
     get_template_part( 'template-parts/content/render-contents', '', array('mainBgColor'=>$mainColor)); 
     
-    $count = count(get_field('contents'));
+    if (get_field('contents')){
+        $count = count(get_field('contents'));    
+    } else {
+        $count = 0 ;
+        /* echo('no content'); */
+    }
+    
     if (!is_int($count/2)){ $mainColor = !$mainColor; }
     
         

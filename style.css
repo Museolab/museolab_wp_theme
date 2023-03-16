@@ -20,16 +20,18 @@ Version: 0.1.1
     
 
     
-    --museolab-dark-primary: rgb(255,88,93);
-    --museolab-dark-secondary: rgb(0,61,165);
+    --museolab-dark-primary: #858585;
+    --museolab-dark-secondary: #646060;
     
     --museolab-contrast-main: #EFD13D;
-    --museolab-light-primary: #D4D9DC;
-    --museolab-light-secondary: var(--third-content-background);
+    
+    
+    --museolab-light-primary: #CEC7C6;
+    --museolab-light-secondary: #C8BAB1;
 
 
 
-    --main-white-color: var(--museolab-light-primary);
+    --main-white-color: white;
     --main-purple-color: #9e89b8;
     
     
@@ -50,7 +52,7 @@ Version: 0.1.1
 
     --primary-content-background: #C4C9CC;
     --secondary-content-background: #D4D9DC;
-    --third-content-background: #B4B9BC;
+    --third-content-background: #C8BAB1;
 
     --main-toto: grey;
 

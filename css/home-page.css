@@ -216,7 +216,7 @@ button {
     height: 150px;
 
     background-position: center;
-    background-color: gainsboro;
+    background-color: var(--museolab-light-secondary);
     
     cursor: pointer;
     box-shadow: 0 0 3px #000;
@@ -226,7 +226,7 @@ button {
 }
 
 .m-article-container:hover{
-    background-color: gray;
+    background-color:  var(--museolab-light-primary);
 }
 
 /* contain title and resume */

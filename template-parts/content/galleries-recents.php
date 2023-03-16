@@ -42,7 +42,7 @@ DISPLAY NEWEST PICTURES ON THE HOME PAGE
 
 <!-- Display a gallery with newest images -->
 <div class="bloc-recents">
-    <h2 class=titre-recent>Dernières Images</h2>
+    <h2 class=titre-recent>Galerie d'images</h2>
     <div class="bloc-recents gallerie">
 
         <?php
