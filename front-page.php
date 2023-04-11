@@ -1,4 +1,4 @@
-<!-- DEBUT page-test-page.php -->
+<!-- DEBUT front-page.php -->
 
 <?php
 
@@ -62,6 +62,14 @@ get_header('', array('page'=>'test'));
  <div id="bottom" class="infoTxt"><a target="_blank" href="mailto:museolab@univ-artois.fr">Nous contacter</a>    </div>
 
     <div class="bloc-contenu">
+        
+        <div class="projet-desctiption content-single-container 
+      secondary-bg-color  ">
+            
+            <!-- A rendre éditable dans le backoffice -->
+
+            <h3 class="emphase"> Le muséolab est atelier laboratoire coporté par <a href="https://www.louvrelensvallee.com">Louvre Lens Vallée</a> et l’<b><a href="https://www.univ-artois.fr">Université d’Artois</a></b>, ouvert vers l’extérieur, il a pour vocation d'accompagner des projets à l’interface de la recherche, la formation, des entreprises, des collectivités et des institutions culturelles dans le domaine du numérique culturel.</h3>
+        </div>
 
         <?php
 

@@ -65,7 +65,7 @@ function debug_to_console($data) {
 /// Enregistre les feuilles de style globale
 function theme_enqueue_styles() {
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'museolab-style', get_stylesheet_directory_uri() . '/css/project-min.css' );
+    wp_enqueue_style( 'museolab-style', get_stylesheet_directory_uri() . '/css/content-excerpt.css' );
 
     wp_enqueue_style( 'museolab-footer', get_stylesheet_directory_uri() . '/css/footer.css' );
 

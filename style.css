@@ -11,6 +11,15 @@ Version: 0.1.1
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
 
+@font-face {
+  font-family: "LLV";
+  src: url("webfonts/LLV.otf") format("opentype");
+}
+
+
+
+
+
 /*  DESIGN FOR THE MAIN ELEMENTS */
 
 /* variables */
@@ -27,7 +36,7 @@ Version: 0.1.1
     
     
     --museolab-light-primary: #CEC7C6;
-    --museolab-light-secondary: #C8BAB1;
+    --museolab-light-secondary: #DFD9D5;
 
 
 
@@ -63,9 +72,9 @@ Version: 0.1.1
     font-size:10px;
 
 
-    --link--color : green;
+    --link--color : rgb(215,215,255);
     --link--select--color: black;
-    --link--visited--color : pink;
+    --link--visited--color : rgb(215,255,215);
 
 }
 
@@ -105,18 +114,27 @@ p {
 /*Pas de soulignage ni de couleurs spéciales pour les liens*/
 a {
     text-decoration: none;
-    color: inherit;
+    color: var(--link--color);
 }
 
-#website-body {
-    height: 100%;
-    width: 100%;
+
+a:visited {
+    color: var(--link--visited--color);
 }
 
 a:hover {
     background: 0;
     color: var(--link--select--color);
 }
+
+
+
+
+#website-body {
+    height: 100%;
+    width: 100%;
+}
+
 
 
 .wrapper {

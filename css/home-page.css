@@ -144,15 +144,19 @@
 
     width: 100%;
     height: auto;
-    font-size: 12rem;
+    font-size: 8rem;
 
     display: inline;
     line-height: 10rem;
     height: 10rem;
+    
+    font-family: "LLV";
 
 
     color: white;
-    font-variant: small-caps;
+    text-transform: uppercase;
+    letter-spacing: 1.2rem;
+    
 
     vertical-align: bottom;
     margin-bottom: -25px;
@@ -169,6 +173,7 @@ button {
     margin-left: auto;
     margin-right: auto;
     background-position: center !important;
+    
 
 }
 
@@ -202,6 +207,8 @@ button {
     min-width: 60px;
     margin: 10px 0 10px 0;
     cursor: pointer;
+    background-color: var(--museolab-light-primary);
+
 
 }
 
@@ -225,6 +232,8 @@ button {
 
 }
 
+
+
 .m-article-container:hover{
     background-color:  var(--museolab-light-primary);
 }
@@ -237,6 +246,8 @@ button {
     height: 100%;
     overflow:hidden;
     margin:5px;
+    
+    color: black !important;
 }
 
 .m-article-head {

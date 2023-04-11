@@ -1,5 +1,5 @@
 
-<!--DEBUT DE content excerpt PHP-->
+<!--DEBUT DE content resume PHP-->
 
 <!-- When the content number is pair the color will change -->
 

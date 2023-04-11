@@ -13,7 +13,7 @@
 
 <!-- DISPLAY MINIATURE ARTICLE -->
 
-<!-- DEBUT content-excerpt.php -->
+<!-- DEBUT miniature-article.php -->
 
 <article class="m-article-container">
     
