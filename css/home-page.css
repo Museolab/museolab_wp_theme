@@ -38,6 +38,8 @@
     width: 100%;
     margin: 0px;
     font-family: var(--global--font-primary);
+    
+    background-color: var(--museolab-dark-primary);
 }
 
 /*header-wip*/
@@ -160,6 +162,8 @@
 
     vertical-align: bottom;
     margin-bottom: -25px;
+    
+    padding-left: 15px;
 
 }
 
@@ -293,7 +297,12 @@ footer{
     background-color: darkolivegreen;
     width: 100%;
     max-width: none !important;
+
     padding-bottom: 0 !important;
+    
+    
+    margin-top: 80px;
+
 }
 
 
